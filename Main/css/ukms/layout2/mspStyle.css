@@ -1,0 +1,1639 @@
+ img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important
+        }
+        span.count-heading {
+            color:
+        }
+
+        span.count-heading {
+            font-size: px;
+            line-height: 1
+        }
+
+        h3.counter.count-number {
+            color: #fff
+        }
+
+        h3.counter.count-number {
+            font-size: 60px;
+            line-height: 1
+        }
+        .hh1{
+                color: #9C2215;
+                font-size: 58px;
+                margin: 0;
+                margin-bottom: 15px;
+        }
+
+        }
+
+        span.format {
+            font-size: 21.8181818182;
+            line-height: 60px
+        }
+
+        i.counter-icon {
+            font-size: 60px;
+            line-height: 1
+        }
+       
+
+        i.counter-icon {
+            color:
+        }
+         #pgc-2-0-0,
+        #pgc-2-1-0,
+        #pgc-2-2-0,
+        #pgc-2-3-0,
+        #pgc-2-4-0,
+        #pgc-2-5-0,
+        #pgc-2-6-0,
+        #pgc-2-7-0 {
+            width: 100%;
+            width: calc(100% - (0 * 0px))
+        }
+
+        #pg-2-0,
+        #pg-2-1,
+        #pg-2-2,
+        #pg-2-3,
+        #pg-2-4,
+        #pg-2-5,
+        #pg-2-6,
+        #pg-2-7,
+        #pl-2 .so-panel:last-child {
+            margin-bottom: 0
+        }
+
+        #pl-2 .so-panel {
+            margin-bottom: 30px
+        }
+
+        #pg-2-0>.panel-row-style {
+            background-image: url(http://www.mysteryshopperspakistan.com/Main/wp-content/uploads/2015/02/23111410/video_bg2.jpg);
+            background-position: center center;
+            background-size: cover;
+            padding: 0 0 0 0;
+            min-height: 100vh;
+            margin-bottom: 0
+        }
+
+        #pg-2-0.panel-no-style,
+        #pg-2-0.panel-has-style>.panel-row-style,
+        #pg-2-1.panel-no-style,
+        #pg-2-1.panel-has-style>.panel-row-style,
+        #pg-2-2.panel-no-style,
+        #pg-2-2.panel-has-style>.panel-row-style {
+            -webkit-align-items: flex-start;
+            align-items: flex-start
+        }
+
+        #pgc-2-0-0 {
+            align-self: auto
+        }
+
+        #panel-2-0-0-0>.panel-widget-style {
+            padding: 0 0 0 0;
+            position: relative
+        }
+
+        #pg-2-1>.panel-row-style {
+            padding: 0 0 0 0
+        }
+
+        #pg-2-2>.panel-row-style {
+            background-color: #f6f6f6;
+            padding: 0 0 64px 0
+        }
+
+        #pg-2-3>.panel-row-style {
+            background-color: #197bbb;
+            padding: 0 0 64px 0
+        }
+
+        #pg-2-4>.panel-row-style {
+            background-color: #464646;
+            padding: 0 0 64px 0
+        }
+
+        #pg-2-5>.panel-row-style {
+            background-color: #6ab023;
+            padding: 0 0 64px 0
+        }
+
+        #pg-2-6>.panel-row-style {
+            background-color: #e9e9e9;
+            padding: 0 0 64px 0
+        }
+
+        #pg-2-7>.panel-row-style {
+            /*background-color: #e1001e;*/
+            padding: 0 0 64px 0
+        }
+
+        @media (max-width:780px) {
+            #pg-2-0.panel-no-style,
+            #pg-2-0.panel-has-style>.panel-row-style,
+            #pg-2-1.panel-no-style,
+            #pg-2-1.panel-has-style>.panel-row-style,
+            #pg-2-2.panel-no-style,
+            #pg-2-2.panel-has-style>.panel-row-style,
+            #pg-2-3.panel-no-style,
+            #pg-2-3.panel-has-style>.panel-row-style,
+            #pg-2-4.panel-no-style,
+            #pg-2-4.panel-has-style>.panel-row-style,
+            #pg-2-5.panel-no-style,
+            #pg-2-5.panel-has-style>.panel-row-style,
+            #pg-2-6.panel-no-style,
+            #pg-2-6.panel-has-style>.panel-row-style,
+            #pg-2-7.panel-no-style,
+            #pg-2-7.panel-has-style>.panel-row-style {
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column
+            }
+            #pg-2-0 .panel-grid-cell,
+            #pg-2-1 .panel-grid-cell,
+            #pg-2-2 .panel-grid-cell,
+            #pg-2-3 .panel-grid-cell,
+            #pg-2-4 .panel-grid-cell,
+            #pg-2-5 .panel-grid-cell,
+            #pg-2-6 .panel-grid-cell,
+            #pg-2-7 .panel-grid-cell {
+                margin-right: 0
+            }
+            #pg-2-0 .panel-grid-cell,
+            #pg-2-1 .panel-grid-cell,
+            #pg-2-2 .panel-grid-cell,
+            #pg-2-3 .panel-grid-cell,
+            #pg-2-4 .panel-grid-cell,
+            #pg-2-5 .panel-grid-cell,
+            #pg-2-6 .panel-grid-cell,
+            #pg-2-7 .panel-grid-cell {
+                width: 100%
+            }
+            #pl-2 .panel-grid-cell {
+                padding: 0
+            }
+            #pl-2 .panel-grid .panel-grid-cell-empty {
+                display: none
+            }
+            #pl-2 .panel-grid .panel-grid-cell-mobile-last {
+                margin-bottom: 0
+            }
+        }
+         #slider_controls_559299565 .prev,
+                                                                            #slider_controls_559299565 .next {
+                                                                                cursor: pointer;
+                                                                                transition: all .2s ease-in
+                                                                            }
+
+                                                                            #slider_controls_559299565 {
+                                                                                z-index: 500
+                                                                            }
+
+                                                                            #slider_controls_559299565 .slider-controls {
+                                                                                top: 0
+                                                                            }
+
+                                                                            #slider_1272319013 .owl-numbers {
+                                                                                color: #fff
+                                                                            }
+
+                                                                            #slider_controls_559299565 .slider-controls .prev {
+                                                                                left: 0;
+                                                                                position: absolute;
+                                                                                display: block;
+                                                                                opacity: .65
+                                                                            }
+
+                                                                            #slider_controls_559299565 .slider-controls .next {
+                                                                                right: 0;
+                                                                                position: absolute;
+                                                                                display: block;
+                                                                                opacity: .65
+                                                                            }
+
+                                                                            #slider_controls_559299565 .slider-controls .prev:hover {
+                                                                                opacity: 1
+                                                                            }
+
+                                                                            #slider_controls_559299565 .slider-controls .next:hover {
+                                                                                opacity: 1
+                                                                            }
+
+                                                                             #slider_controls_slider_home_2 .prev,
+                                                                                    #slider_controls_slider_home_2 .next {
+                                                                                        cursor: pointer;
+                                                                                        transition: all .2s ease-in
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_2 {
+                                                                                        z-index: 500
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_2 .slider-controls {
+                                                                                        top: 0
+                                                                                    }
+
+                                                                                    #slider_home_2 .owl-numbers {
+                                                                                        color: rgba(0, 0, 0, .16)
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_2 .slider-controls .prev {
+                                                                                        left: 0;
+                                                                                        position: absolute;
+                                                                                        display: block;
+                                                                                        opacity: .65
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_2 .slider-controls .next {
+                                                                                        right: 0;
+                                                                                        position: absolute;
+                                                                                        display: block;
+                                                                                        opacity: .65
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_2 .slider-controls .prev:hover {
+                                                                                        opacity: 1
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_2 .slider-controls .next:hover {
+                                                                                        opacity: 1
+                                                                                    }
+                                                                                     #slider_controls_slider_home_3 .prev,
+                                                                                    #slider_controls_slider_home_3 .next {
+                                                                                        cursor: pointer;
+                                                                                        transition: all .2s ease-in
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_3 {
+                                                                                        z-index: 500
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_3 .slider-controls {
+                                                                                        top: 0
+                                                                                    }
+
+                                                                                    #slider_home_3 .owl-numbers {
+                                                                                        color: rgba(0, 0, 0, .16)
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_3 .slider-controls .prev {
+                                                                                        left: 0;
+                                                                                        position: absolute;
+                                                                                        display: block;
+                                                                                        opacity: .65
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_3 .slider-controls .next {
+                                                                                        right: 0;
+                                                                                        position: absolute;
+                                                                                        display: block;
+                                                                                        opacity: .65
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_3 .slider-controls .prev:hover {
+                                                                                        opacity: 1
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_3 .slider-controls .next:hover {
+                                                                                        opacity: 1
+                                                                                    }
+                                                                                     #slider_controls_slider_home_4 .prev,
+                                                                                    #slider_controls_slider_home_4 .next {
+                                                                                        cursor: pointer;
+                                                                                        transition: all .2s ease-in
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_4 {
+                                                                                        z-index: 500
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_4 .slider-controls {
+                                                                                        top: 0
+                                                                                    }
+
+                                                                                    #slider_home_4 .owl-numbers {
+                                                                                        color: rgba(0, 0, 0, .16)
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_4 .slider-controls .prev {
+                                                                                        left: 0;
+                                                                                        position: absolute;
+                                                                                        display: block;
+                                                                                        opacity: .65
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_4 .slider-controls .next {
+                                                                                        right: 0;
+                                                                                        position: absolute;
+                                                                                        display: block;
+                                                                                        opacity: .65
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_4 .slider-controls .prev:hover {
+                                                                                        opacity: 1
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_4 .slider-controls .next:hover {
+                                                                                        opacity: 1
+                                                                                    }
+                                                                                     #slider_controls_slider_home_5 .prev,
+                                                                                    #slider_controls_slider_home_5 .next {
+                                                                                        cursor: pointer;
+                                                                                        transition: all .2s ease-in
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_5 {
+                                                                                        z-index: 500
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_5 .slider-controls {
+                                                                                        top: 0
+                                                                                    }
+
+                                                                                    #slider_home_5 .owl-numbers {
+                                                                                        color: rgba(0, 0, 0, .16)
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_5 .slider-controls .prev {
+                                                                                        left: 0;
+                                                                                        position: absolute;
+                                                                                        display: block;
+                                                                                        opacity: .65
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_5 .slider-controls .next {
+                                                                                        right: 0;
+                                                                                        position: absolute;
+                                                                                        display: block;
+                                                                                        opacity: .65
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_5 .slider-controls .prev:hover {
+                                                                                        opacity: 1
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_5 .slider-controls .next:hover {
+                                                                                        opacity: 1
+                                                                                    }
+                                                                                     #slider_controls_slider_home_6 .prev,
+                                                                                    #slider_controls_slider_home_6 .next {
+                                                                                        cursor: pointer;
+                                                                                        transition: all .2s ease-in
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_6 {
+                                                                                        z-index: 500
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_6 .slider-controls {
+                                                                                        top: 0
+                                                                                    }
+
+                                                                                    #slider_home_6 .owl-numbers {
+                                                                                        color: rgba(0, 0, 0, .16)
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_6 .slider-controls .prev {
+                                                                                        left: 0;
+                                                                                        position: absolute;
+                                                                                        display: block;
+                                                                                        opacity: .65
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_6 .slider-controls .next {
+                                                                                        right: 0;
+                                                                                        position: absolute;
+                                                                                        display: block;
+                                                                                        opacity: .65
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_6 .slider-controls .prev:hover {
+                                                                                        opacity: 1
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_6 .slider-controls .next:hover {
+                                                                                        opacity: 1
+                                                                                    }
+                                                                                    #slider_controls_slider_home_8 .prev,
+                                                                                    #slider_controls_slider_home_8 .next {
+                                                                                        cursor: pointer;
+                                                                                        transition: all .2s ease-in
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_8 {
+                                                                                        z-index: 500
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_8 .slider-controls {
+                                                                                        top: 0
+                                                                                    }
+
+                                                                                    #slider_home_8 .owl-numbers {
+                                                                                        color: rgba(0, 0, 0, .16)
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_8 .slider-controls .prev {
+                                                                                        left: 0;
+                                                                                        position: absolute;
+                                                                                        display: block;
+                                                                                        opacity: .65
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_8 .slider-controls .next {
+                                                                                        right: 0;
+                                                                                        position: absolute;
+                                                                                        display: block;
+                                                                                        opacity: .65
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_8 .slider-controls .prev:hover {
+                                                                                        opacity: 1
+                                                                                    }
+
+                                                                                    #slider_controls_slider_home_8 .slider-controls .next:hover {
+                                                                                        opacity: 1
+                                                                                    }
+                                                                                     #slider_controls_965592198 .prev,
+                                                                                #slider_controls_965592198 .next {
+                                                                                    cursor: pointer;
+                                                                                    transition: all .2s ease-in
+                                                                                }
+
+                                                                                #slider_controls_965592198 {
+                                                                                    z-index: 500
+                                                                                }
+
+                                                                                #slider_controls_965592198 .slider-controls {
+                                                                                    top: 0
+                                                                                }
+
+                                                                                #slider_1808506400 .owl-numbers {
+                                                                                    color: rgba(0, 0, 0, .16)
+                                                                                }
+
+                                                                                #slider_controls_965592198 .slider-controls .prev {
+                                                                                    left: 0;
+                                                                                    position: absolute
+                                                                                }
+
+                                                                                #slider_controls_965592198 .slider-controls .next {
+                                                                                    right: 0;
+                                                                                    position: absolute
+                                                                                }
+
+#btn_1299101875 {
+        color: #fff !important;
+        border-radius: 0;
+        background: #111;
+        ;
+        text-transform: none
+    }
+
+    #btn_1299101875:hover {
+        filter: none !important;
+        background: none !important;
+        color: #fff !important
+    }
+
+    #btn_1262123181 {
+        color: #fff !important;
+        border-radius: 0;
+        background: #111;
+        ;
+        text-transform: none
+    }
+
+    #btn_1262123181:hover {
+        filter: none !important;
+        background: none !important;
+        color: #fff !important
+    }
+
+    .intense.nav-tabs>.active>a,
+    .intense.nav-tabs>.active>a:hover,
+    .intense.nav-tabs>.active>a:focus {
+        background-color: #e8e8e8
+    }
+
+    .intense.nav-tabs>li>a {
+        background-color: #f7f7f7
+    }
+
+    .intense.nav-tabs>.active>a,
+    .intense.nav-tabs>.active>a:hover,
+    .intense.nav-tabs>.active>a:focus {
+        color: #1a8be2
+    }
+
+    #btn_413962077 {
+        color: rgba(0, 0, 0, .16) !important;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0);
+        ;
+        text-transform: none
+    }
+
+    #btn_413962077:hover {
+        filter: none !important;
+        background: none !important;
+        color: #444 !important
+    }
+
+    #btn_1033662628 {
+        color: rgba(0, 0, 0, .16) !important;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0);
+        ;
+        text-transform: none
+    }
+
+    #btn_1033662628:hover {
+        filter: none !important;
+        background: none !important;
+        color: #444 !important
+    }
+
+    #btn_1782482937 {
+        color: rgba(0, 0, 0, .16) !important;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0);
+        ;
+        text-transform: none
+    }
+
+    #btn_1782482937:hover {
+        filter: none !important;
+        background: none !important;
+        color: #444 !important
+    }
+
+    #btn_27158353 {
+        color: rgba(0, 0, 0, .16) !important;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0);
+        ;
+        text-transform: none
+    }
+
+    #btn_27158353:hover {
+        filter: none !important;
+        background: none !important;
+        color: #444 !important
+    }
+
+    #btn_853513063 {
+        color: rgba(0, 0, 0, .16) !important;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0);
+        ;
+        text-transform: none
+    }
+
+    #btn_853513063:hover {
+        filter: none !important;
+        background: none !important;
+        color: #444 !important
+    }
+
+    #btn_1513015077 {
+        color: rgba(0, 0, 0, .16) !important;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0);
+        ;
+        text-transform: none
+    }
+
+    #btn_1513015077:hover {
+        filter: none !important;
+        background: none !important;
+        color: #444 !important
+    }
+
+    #btn_1771035921 {
+        color: rgba(0, 0, 0, .16) !important;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0);
+        ;
+        text-transform: none
+    }
+
+    #btn_1771035921:hover {
+        filter: none !important;
+        background: none !important;
+        color: #444 !important
+    }
+
+    #btn_1660998221 {
+        color: rgba(0, 0, 0, .16) !important;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0);
+        ;
+        text-transform: none
+    }
+
+    #btn_1660998221:hover {
+        filter: none !important;
+        background: none !important;
+        color: #444 !important
+    }
+
+    #btn_1512668735 {
+        color: rgba(0, 0, 0, .16) !important;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0);
+        ;
+        text-transform: none
+    }
+
+    #btn_1512668735:hover {
+        filter: none !important;
+        background: none !important;
+        color: #444 !important
+    }
+
+    #btn_308259199 {
+        color: rgba(0, 0, 0, .16) !important;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0);
+        ;
+        text-transform: none
+    }
+
+    #btn_308259199:hover {
+        filter: none !important;
+        background: none !important;
+        color: #444 !important
+    }
+
+    #btn_154097359 {
+        color: rgba(0, 0, 0, .16) !important;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0);
+        ;
+        text-transform: none
+    }
+
+    #btn_154097359:hover {
+        filter: none !important;
+        background: none !important;
+        color: #444 !important
+    }
+
+    #btn_1541909386 {
+        color: rgba(0, 0, 0, .16) !important;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0);
+        ;
+        text-transform: none
+    }
+
+    #btn_1541909386:hover {
+        filter: none !important;
+        background: none !important;
+        color: #444 !important
+    }
+
+    #btn_1837182193 {
+        color: rgba(0, 0, 0, .16) !important;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0);
+        ;
+        text-transform: none
+    }
+
+    #btn_1837182193:hover {
+        filter: none !important;
+        background: none !important;
+        color: #444 !important
+    }
+
+    #btn_2008004301 {
+        color: rgba(0, 0, 0, .16) !important;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0);
+        ;
+        text-transform: none
+    }
+
+    #btn_2008004301:hover {
+        filter: none !important;
+        background: none !important;
+        color: #444 !important
+    }
+
+    #btn_1371037203 {
+        color: rgba(0, 0, 0, .16) !important;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0);
+        ;
+        text-transform: none
+    }
+
+    #btn_1371037203:hover {
+        filter: none !important;
+        background: none !important;
+        color: #444 !important
+    }
+
+    #btn_1483121372 {
+        color: rgba(0, 0, 0, .16) !important;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0);
+        ;
+        text-transform: none
+    }
+
+    #btn_1483121372:hover {
+        filter: none !important;
+        background: none !important;
+        color: #444 !important
+    }
+
+    #btn_1623427059 {
+        color: #fff !important;
+        border-radius: 0;
+        background: #1a8be2;
+        ;
+        text-transform: none
+    }
+
+    #btn_1623427059:hover {
+        filter: none !important;
+        background: none !important;
+        color: #fff !important
+    }
+
+    #btn_1855149732 {
+        color: #fff !important;
+        border-radius: 0;
+        background: #1a8be2;
+        ;
+        text-transform: none
+    }
+
+    #btn_1855149732:hover {
+        filter: none !important;
+        background: none !important;
+        color: #fff !important
+    }
+
+     #pgc-w59b14300141b1-0-0,
+    #pgc-w59b14300141b1-0-2,
+    #pgc-w59b14300141b1-1-0,
+    #pgc-w59b14300141b1-1-2 {
+        width: 30%;
+        width: calc(30% - (0.7 * 0px))
+    }
+
+    #pgc-w59b14300141b1-0-1,
+    #pgc-w59b14300141b1-1-1 {
+        width: 40%;
+        width: calc(40% - (0.6 * 0px))
+    }
+
+    #pg-w59b14300141b1-0,
+    #pg-w59b14300141b1-1,
+    #pl-w59b14300141b1 .so-panel:last-child {
+        margin-bottom: 0
+    }
+
+    #pl-w59b14300141b1 .so-panel {
+        margin-bottom: 30px
+    }
+
+    #pg-w59b14300141b1-0>.panel-row-style {
+        padding: 0 0 0 0
+    }
+
+    #pg-w59b14300141b1-1>.panel-row-style {
+        padding: 50px 0 0 0
+    }
+
+    #pg-w59b14300141b1-1.panel-no-style,
+    #pg-w59b14300141b1-1.panel-has-style>.panel-row-style {
+        -webkit-align-items: flex-start;
+        align-items: flex-start
+    }
+
+    #panel-w59b14300141b1-1-1-0>.panel-widget-style {
+        display: none
+    }
+
+    @media (max-width:780px) {
+        #pg-w59b14300141b1-0.panel-no-style,
+        #pg-w59b14300141b1-0.panel-has-style>.panel-row-style,
+        #pg-w59b14300141b1-1.panel-no-style,
+        #pg-w59b14300141b1-1.panel-has-style>.panel-row-style {
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column
+        }
+        #pg-w59b14300141b1-0 .panel-grid-cell,
+        #pg-w59b14300141b1-1 .panel-grid-cell {
+            margin-right: 0
+        }
+        #pg-w59b14300141b1-0 .panel-grid-cell,
+        #pg-w59b14300141b1-1 .panel-grid-cell {
+            width: 100%
+        }
+        #pgc-w59b14300141b1-0-0,
+        #pgc-w59b14300141b1-0-1,
+        #pgc-w59b14300141b1-1-0,
+        #pgc-w59b14300141b1-1-1 {
+            margin-bottom: 30px
+        }
+        #pl-w59b14300141b1 .panel-grid-cell {
+            padding: 0
+        }
+        #pl-w59b14300141b1 .panel-grid .panel-grid-cell-empty {
+            display: none
+        }
+        #pl-w59b14300141b1 .panel-grid .panel-grid-cell-mobile-last {
+            margin-bottom: 0
+        }
+    }
+
+    #pgc-w59775a642dada-0-0,
+    #pgc-w59775a642dada-0-1,
+    #pgc-w59775a642dada-0-2,
+    #pgc-w59775a642dada-0-3,
+    #pgc-w59775a642dada-0-4 {
+        width: 20%;
+        width: calc(20% - (0.8 * 30px))
+    }
+
+    #pl-w59775a642dada .so-panel {
+        margin-bottom: 30px
+    }
+
+    #pl-w59775a642dada .so-panel:last-child,
+    #panel-w59775a642dada-0-0-1>.panel-widget-style,
+    #panel-w59775a642dada-0-1-1>.panel-widget-style,
+    #panel-w59775a642dada-0-2-1>.panel-widget-style,
+    #panel-w59775a642dada-0-3-1>.panel-widget-style,
+    #panel-w59775a642dada-0-4-1>.panel-widget-style {
+        margin-bottom: 0
+    }
+
+    #pg-w59775a642dada-0.panel-no-style,
+    #pg-w59775a642dada-0.panel-has-style>.panel-row-style {
+        -webkit-align-items: flex-start;
+        align-items: flex-start
+    }
+
+    #panel-w59775a642dada-0-0-0>.panel-widget-style,
+    #panel-w59775a642dada-0-1-0>.panel-widget-style,
+    #panel-w59775a642dada-0-2-0>.panel-widget-style,
+    #panel-w59775a642dada-0-3-0>.panel-widget-style,
+    #panel-w59775a642dada-0-4-0>.panel-widget-style {
+        padding: 30px 0 30px 0;
+        margin-bottom: 0
+    }
+
+    @media (max-width:780px) {
+        #pg-w59775a642dada-0.panel-no-style,
+        #pg-w59775a642dada-0.panel-has-style>.panel-row-style {
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column
+        }
+        #pg-w59775a642dada-0 .panel-grid-cell {
+            margin-right: 0
+        }
+        #pg-w59775a642dada-0 .panel-grid-cell {
+            width: 100%
+        }
+        #pgc-w59775a642dada-0-0,
+        #pgc-w59775a642dada-0-1,
+        #pgc-w59775a642dada-0-2,
+        #pgc-w59775a642dada-0-3 {
+            margin-bottom: 30px
+        }
+        #pl-w59775a642dada .panel-grid-cell {
+            padding: 0
+        }
+        #pl-w59775a642dada .panel-grid .panel-grid-cell-empty {
+            display: none
+        }
+        #pl-w59775a642dada .panel-grid .panel-grid-cell-mobile-last {
+            margin-bottom: 0
+        }
+    }
+
+    #pgc-w59b143001413f-0-0,
+    #pgc-w59b143001413f-3-0 {
+        width: 100%;
+        width: calc(100% - (0 * 0px))
+    }
+
+    #pg-w59b143001413f-0,
+    #pg-w59b143001413f-2,
+    #pg-w59b143001413f-3,
+    #pl-w59b143001413f .so-panel:last-child,
+    #panel-w59b143001413f-1-0-0>.panel-widget-style,
+    #panel-w59b143001413f-1-1-0>.panel-widget-style {
+        margin-bottom: 0
+    }
+
+    #pgc-w59b143001413f-1-0,
+    #pgc-w59b143001413f-1-1,
+    #pgc-w59b143001413f-1-2 {
+        width: 33.3333%;
+        width: calc(33.3333% - (0.666666666667 * 0px))
+    }
+
+    #pg-w59b143001413f-1 {
+        margin-bottom: 5px
+    }
+
+    #pgc-w59b143001413f-2-0 {
+        width: 100%;
+        width: calc(100% - (0 * 10px))
+    }
+
+    #pl-w59b143001413f .so-panel {
+        margin-bottom: 30px
+    }
+
+    #pg-w59b143001413f-0>.panel-row-style,
+    #pg-w59b143001413f-1>.panel-row-style {
+        padding: 0 0 0 0
+    }
+
+    #pg-w59b143001413f-0.panel-no-style,
+    #pg-w59b143001413f-0.panel-has-style>.panel-row-style,
+    #pg-w59b143001413f-1.panel-no-style,
+    #pg-w59b143001413f-1.panel-has-style>.panel-row-style {
+        -webkit-align-items: flex-start;
+        align-items: flex-start
+    }
+
+    #panel-w59b143001413f-1-2-0>.panel-widget-style {
+        text-align: right
+    }
+
+    #pg-w59b143001413f-2>.panel-row-style {
+        padding: 0 0 20px 0;
+        background-color: rgba(0, 0, 0, .7);
+        margin-bottom: 0
+    }
+
+    #pg-w59b143001413f-3>.panel-row-style {
+        padding: 0 0 0 0;
+        background-color: rgba(0, 0, 0, .7);
+        margin-bottom: 0
+    }
+
+    @media (max-width:780px) {
+        #pg-w59b143001413f-0.panel-no-style,
+        #pg-w59b143001413f-0.panel-has-style>.panel-row-style,
+        #pg-w59b143001413f-1.panel-no-style,
+        #pg-w59b143001413f-1.panel-has-style>.panel-row-style,
+        #pg-w59b143001413f-2.panel-no-style,
+        #pg-w59b143001413f-2.panel-has-style>.panel-row-style,
+        #pg-w59b143001413f-3.panel-no-style,
+        #pg-w59b143001413f-3.panel-has-style>.panel-row-style {
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column
+        }
+        #pg-w59b143001413f-0 .panel-grid-cell,
+        #pg-w59b143001413f-1 .panel-grid-cell,
+        #pg-w59b143001413f-2 .panel-grid-cell,
+        #pg-w59b143001413f-3 .panel-grid-cell {
+            margin-right: 0
+        }
+        #pg-w59b143001413f-0 .panel-grid-cell,
+        #pg-w59b143001413f-1 .panel-grid-cell,
+        #pg-w59b143001413f-2 .panel-grid-cell,
+        #pg-w59b143001413f-3 .panel-grid-cell {
+            width: 100%
+        }
+        #pgc-w59b143001413f-1-0,
+        #pgc-w59b143001413f-1-1 {
+            margin-bottom: 30px
+        }
+        #pl-w59b143001413f .panel-grid-cell {
+            padding: 0
+        }
+        #pl-w59b143001413f .panel-grid .panel-grid-cell-empty {
+            display: none
+        }
+        #pl-w59b143001413f .panel-grid .panel-grid-cell-mobile-last,
+        #panel-w59b143001413f-1-0-0>.panel-widget-style,
+        #panel-w59b143001413f-1-1-0>.panel-widget-style {
+            margin-bottom: 0
+        }
+        #pg-w59b143001413f-1>.panel-row-style {
+            padding: 0 0 0 0
+        }
+    }
+
+    #pgc-w5a96d93f8d399-0-0,
+    #pgc-w5a96d93f8d399-0-1,
+    #pgc-w5a96d93f8d399-0-2 {
+        width: 33.3333%;
+        width: calc(33.3333% - (0.666666666667 * 0px))
+    }
+
+    #pg-w5a96d93f8d399-0,
+    #pg-w5a96d93f8d399-1,
+    #pl-w5a96d93f8d399 .so-panel:last-child {
+        margin-bottom: 0
+    }
+
+    #pgc-w5a96d93f8d399-1-0 {
+        width: 100%;
+        width: calc(100% - (0 * 0px))
+    }
+
+    #pl-w5a96d93f8d399 .so-panel {
+        margin-bottom: 30px
+    }
+
+    #pg-w5a96d93f8d399-0>.panel-row-style,
+    #pg-w5a96d93f8d399-1>.panel-row-style {
+        padding: 0 0 0 0
+    }
+
+    #pg-w5a96d93f8d399-1.panel-no-style,
+    #pg-w5a96d93f8d399-1.panel-has-style>.panel-row-style {
+        -webkit-align-items: flex-start;
+        align-items: flex-start
+    }
+
+    @media (max-width:780px) {
+        #pg-w5a96d93f8d399-0.panel-no-style,
+        #pg-w5a96d93f8d399-0.panel-has-style>.panel-row-style,
+        #pg-w5a96d93f8d399-1.panel-no-style,
+        #pg-w5a96d93f8d399-1.panel-has-style>.panel-row-style {
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column
+        }
+        #pg-w5a96d93f8d399-0 .panel-grid-cell,
+        #pg-w5a96d93f8d399-1 .panel-grid-cell {
+            margin-right: 0
+        }
+        #pg-w5a96d93f8d399-0 .panel-grid-cell,
+        #pg-w5a96d93f8d399-1 .panel-grid-cell {
+            width: 100%
+        }
+        #pgc-w5a96d93f8d399-0-0,
+        #pgc-w5a96d93f8d399-0-1 {
+            margin-bottom: 30px
+        }
+        #pl-w5a96d93f8d399 .panel-grid-cell {
+            padding: 0
+        }
+        #pl-w5a96d93f8d399 .panel-grid .panel-grid-cell-empty {
+            display: none
+        }
+        #pl-w5a96d93f8d399 .panel-grid .panel-grid-cell-mobile-last {
+            margin-bottom: 0
+        }
+    }
+
+    #pgc-w5937b901bc740-0-0,
+    #pgc-w5937b901bc740-0-1,
+    #pgc-w5937b901bc740-0-2,
+    #pgc-w5937b901bc740-2-0,
+    #pgc-w5937b901bc740-2-1,
+    #pgc-w5937b901bc740-2-2 {
+        width: 33.3333%;
+        width: calc(33.3333% - (0.666666666667 * 0px))
+    }
+
+    #pg-w5937b901bc740-0,
+    #pg-w5937b901bc740-1,
+    #pg-w5937b901bc740-2,
+    #pl-w5937b901bc740 .so-panel:last-child {
+        margin-bottom: 0
+    }
+
+    #pgc-w5937b901bc740-1-0 {
+        width: 100%;
+        width: calc(100% - (0 * 0px))
+    }
+
+    #pl-w5937b901bc740 .so-panel {
+        margin-bottom: 30px
+    }
+
+    #pg-w5937b901bc740-0>.panel-row-style,
+    #pg-w5937b901bc740-1>.panel-row-style {
+        padding: 0 0 0 0
+    }
+
+    #pg-w5937b901bc740-2>.panel-row-style {
+        padding: 64px 0 0 0
+    }
+
+    @media (max-width:780px) {
+        #pg-w5937b901bc740-0.panel-no-style,
+        #pg-w5937b901bc740-0.panel-has-style>.panel-row-style,
+        #pg-w5937b901bc740-1.panel-no-style,
+        #pg-w5937b901bc740-1.panel-has-style>.panel-row-style,
+        #pg-w5937b901bc740-2.panel-no-style,
+        #pg-w5937b901bc740-2.panel-has-style>.panel-row-style {
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column
+        }
+        #pg-w5937b901bc740-0 .panel-grid-cell,
+        #pg-w5937b901bc740-1 .panel-grid-cell,
+        #pg-w5937b901bc740-2 .panel-grid-cell {
+            margin-right: 0
+        }
+        #pg-w5937b901bc740-0 .panel-grid-cell,
+        #pg-w5937b901bc740-1 .panel-grid-cell,
+        #pg-w5937b901bc740-2 .panel-grid-cell {
+            width: 100%
+        }
+        #pgc-w5937b901bc740-0-0,
+        #pgc-w5937b901bc740-0-1,
+        #pgc-w5937b901bc740-2-0,
+        #pgc-w5937b901bc740-2-1 {
+            margin-bottom: 30px
+        }
+        #pl-w5937b901bc740 .panel-grid-cell {
+            padding: 0
+        }
+        #pl-w5937b901bc740 .panel-grid .panel-grid-cell-empty {
+            display: none
+        }
+        #pl-w5937b901bc740 .panel-grid .panel-grid-cell-mobile-last {
+            margin-bottom: 0
+        }
+    }
+
+    #pgc-w595255eec84b0-0-0,
+    #pgc-w595255eec84b0-0-1,
+    #pgc-w595255eec84b0-0-2 {
+        width: 33.3333%;
+        width: calc(33.3333% - (0.666666666667 * 0px))
+    }
+
+    #pg-w595255eec84b0-0,
+    #pg-w595255eec84b0-1,
+    #pl-w595255eec84b0 .so-panel:last-child {
+        margin-bottom: 0
+    }
+
+    #pgc-w595255eec84b0-1-0,
+    #pgc-w595255eec84b0-1-2 {
+        width: 15%;
+        width: calc(15% - (0.85 * 0px))
+    }
+
+    #pgc-w595255eec84b0-1-1 {
+        width: 70%;
+        width: calc(70% - (0.3 * 0px))
+    }
+
+    #pl-w595255eec84b0 .so-panel {
+        margin-bottom: 30px
+    }
+
+    #pg-w595255eec84b0-0>.panel-row-style,
+    #pg-w595255eec84b0-1>.panel-row-style {
+        padding: 0 0 0 0
+    }
+
+    #pg-w595255eec84b0-0.panel-no-style,
+    #pg-w595255eec84b0-0.panel-has-style>.panel-row-style {
+        -webkit-align-items: flex-start;
+        align-items: flex-start
+    }
+
+    @media (max-width:780px) {
+        #pg-w595255eec84b0-0.panel-no-style,
+        #pg-w595255eec84b0-0.panel-has-style>.panel-row-style,
+        #pg-w595255eec84b0-1.panel-no-style,
+        #pg-w595255eec84b0-1.panel-has-style>.panel-row-style {
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column
+        }
+        #pg-w595255eec84b0-0 .panel-grid-cell,
+        #pg-w595255eec84b0-1 .panel-grid-cell {
+            margin-right: 0
+        }
+        #pg-w595255eec84b0-0 .panel-grid-cell,
+        #pg-w595255eec84b0-1 .panel-grid-cell {
+            width: 100%
+        }
+        #pgc-w595255eec84b0-0-0,
+        #pgc-w595255eec84b0-0-1,
+        #pgc-w595255eec84b0-1-0,
+        #pgc-w595255eec84b0-1-1 {
+            margin-bottom: 30px
+        }
+        #pl-w595255eec84b0 .panel-grid-cell {
+            padding: 0
+        }
+        #pl-w595255eec84b0 .panel-grid .panel-grid-cell-empty {
+            display: none
+        }
+        #pl-w595255eec84b0 .panel-grid .panel-grid-cell-mobile-last {
+            margin-bottom: 0
+        }
+    }
+
+    #pgc-w5937b7e50353e-0-0,
+    #pgc-w5937b7e50353e-0-1,
+    #pgc-w5937b7e50353e-0-2 {
+        width: 33.3333%;
+        width: calc(33.3333% - (0.666666666667 * 0px))
+    }
+
+    #pg-w5937b7e50353e-0,
+    #pg-w5937b7e50353e-1,
+    #pl-w5937b7e50353e .so-panel:last-child {
+        margin-bottom: 0
+    }
+
+    #pgc-w5937b7e50353e-1-0,
+    #pgc-w5937b7e50353e-1-2 {
+        width: 15%;
+        width: calc(15% - (0.85 * 0px))
+    }
+
+    #pgc-w5937b7e50353e-1-1 {
+        width: 70%;
+        width: calc(70% - (0.3 * 0px))
+    }
+
+    #pl-w5937b7e50353e .so-panel {
+        margin-bottom: 30px
+    }
+
+    #pg-w5937b7e50353e-0>.panel-row-style,
+    #pg-w5937b7e50353e-1>.panel-row-style {
+        padding: 0 0 0 0
+    }
+
+    @media (max-width:780px) {
+        #pg-w5937b7e50353e-0.panel-no-style,
+        #pg-w5937b7e50353e-0.panel-has-style>.panel-row-style,
+        #pg-w5937b7e50353e-1.panel-no-style,
+        #pg-w5937b7e50353e-1.panel-has-style>.panel-row-style {
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column
+        }
+        #pg-w5937b7e50353e-0 .panel-grid-cell,
+        #pg-w5937b7e50353e-1 .panel-grid-cell {
+            margin-right: 0
+        }
+        #pg-w5937b7e50353e-0 .panel-grid-cell,
+        #pg-w5937b7e50353e-1 .panel-grid-cell {
+            width: 100%
+        }
+        #pgc-w5937b7e50353e-0-0,
+        #pgc-w5937b7e50353e-0-1,
+        #pgc-w5937b7e50353e-1-0,
+        #pgc-w5937b7e50353e-1-1 {
+            margin-bottom: 30px
+        }
+        #pl-w5937b7e50353e .panel-grid-cell {
+            padding: 0
+        }
+        #pl-w5937b7e50353e .panel-grid .panel-grid-cell-empty {
+            display: none
+        }
+        #pl-w5937b7e50353e .panel-grid .panel-grid-cell-mobile-last {
+            margin-bottom: 0
+        }
+    }
+
+    #pgc-w595255eec878d-0-0,
+    #pgc-w595255eec878d-0-1,
+    #pgc-w595255eec878d-0-2,
+    #pgc-w595255eec878d-2-0,
+    #pgc-w595255eec878d-2-1,
+    #pgc-w595255eec878d-2-2 {
+        width: 33.3333%;
+        width: calc(33.3333% - (0.666666666667 * 0px))
+    }
+
+    #pg-w595255eec878d-0,
+    #pg-w595255eec878d-1,
+    #pg-w595255eec878d-2,
+    #pg-w595255eec878d-3,
+    #pl-w595255eec878d .so-panel:last-child {
+        margin-bottom: 0
+    }
+
+    #pgc-w595255eec878d-1-0,
+    #pgc-w595255eec878d-1-2,
+    #pgc-w595255eec878d-3-0,
+    #pgc-w595255eec878d-3-2 {
+        width: 15%;
+        width: calc(15% - (0.85 * 0px))
+    }
+
+    #pgc-w595255eec878d-1-1,
+    #pgc-w595255eec878d-3-1 {
+        width: 70%;
+        width: calc(70% - (0.3 * 0px))
+    }
+
+    #pl-w595255eec878d .so-panel {
+        margin-bottom: 30px
+    }
+
+    #pg-w595255eec878d-0>.panel-row-style,
+    #pg-w595255eec878d-1>.panel-row-style {
+        padding: 0 0 0 0
+    }
+
+    #pg-w595255eec878d-2>.panel-row-style,
+    #pg-w595255eec878d-3>.panel-row-style {
+        padding: 0 0 0 0;
+        display: none
+    }
+
+    @media (max-width:780px) {
+        #pg-w595255eec878d-0.panel-no-style,
+        #pg-w595255eec878d-0.panel-has-style>.panel-row-style,
+        #pg-w595255eec878d-1.panel-no-style,
+        #pg-w595255eec878d-1.panel-has-style>.panel-row-style,
+        #pg-w595255eec878d-2.panel-no-style,
+        #pg-w595255eec878d-2.panel-has-style>.panel-row-style,
+        #pg-w595255eec878d-3.panel-no-style,
+        #pg-w595255eec878d-3.panel-has-style>.panel-row-style {
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column
+        }
+        #pg-w595255eec878d-0 .panel-grid-cell,
+        #pg-w595255eec878d-1 .panel-grid-cell,
+        #pg-w595255eec878d-2 .panel-grid-cell,
+        #pg-w595255eec878d-3 .panel-grid-cell {
+            margin-right: 0
+        }
+        #pg-w595255eec878d-0 .panel-grid-cell,
+        #pg-w595255eec878d-1 .panel-grid-cell,
+        #pg-w595255eec878d-2 .panel-grid-cell,
+        #pg-w595255eec878d-3 .panel-grid-cell {
+            width: 100%
+        }
+        #pgc-w595255eec878d-0-0,
+        #pgc-w595255eec878d-0-1,
+        #pgc-w595255eec878d-1-0,
+        #pgc-w595255eec878d-1-1,
+        #pgc-w595255eec878d-2-0,
+        #pgc-w595255eec878d-2-1,
+        #pgc-w595255eec878d-3-0,
+        #pgc-w595255eec878d-3-1 {
+            margin-bottom: 30px
+        }
+        #pl-w595255eec878d .panel-grid-cell {
+            padding: 0
+        }
+        #pl-w595255eec878d .panel-grid .panel-grid-cell-empty {
+            display: none
+        }
+        #pl-w595255eec878d .panel-grid .panel-grid-cell-mobile-last {
+            margin-bottom: 0
+        }
+    }
+
+    #pgc-w594f821ad1e3b-0-0 {
+        width: 66.7%;
+        width: calc(66.7% - (0.333 * 0px))
+    }
+
+    #pgc-w594f821ad1e3b-0-1 {
+        width: 33.3%;
+        width: calc(33.3% - (0.667 * 0px))
+    }
+
+    #pg-w594f821ad1e3b-0,
+    #pg-w594f821ad1e3b-1,
+    #pl-w594f821ad1e3b .so-panel:last-child {
+        margin-bottom: 0
+    }
+
+    #pgc-w594f821ad1e3b-1-0 {
+        width: 85%;
+        width: calc(85% - (0.15 * 0px))
+    }
+
+    #pgc-w594f821ad1e3b-1-1 {
+        width: 15%;
+        width: calc(15% - (0.85 * 0px))
+    }
+
+    #pl-w594f821ad1e3b .so-panel {
+        margin-bottom: 30px
+    }
+
+    #pg-w594f821ad1e3b-0>.panel-row-style,
+    #pg-w594f821ad1e3b-1>.panel-row-style {
+        padding: 0 0 0 0
+    }
+
+    #pg-w594f821ad1e3b-0.panel-no-style,
+    #pg-w594f821ad1e3b-0.panel-has-style>.panel-row-style,
+    #pg-w594f821ad1e3b-1.panel-no-style,
+    #pg-w594f821ad1e3b-1.panel-has-style>.panel-row-style {
+        -webkit-align-items: flex-start;
+        align-items: flex-start
+    }
+
+    #panel-w594f821ad1e3b-1-0-0>.panel-widget-style {
+        background-color: #1da1f2;
+        padding: 30px 40px 50px 40px
+    }
+
+    #panel-w594f821ad1e3b-1-1-0>.panel-widget-style {
+        background-color: #1679d9;
+        padding: 30px 40px 50px 40px
+    }
+
+    @media (max-width:780px) {
+        #pg-w594f821ad1e3b-0.panel-no-style,
+        #pg-w594f821ad1e3b-0.panel-has-style>.panel-row-style,
+        #pg-w594f821ad1e3b-1.panel-no-style,
+        #pg-w594f821ad1e3b-1.panel-has-style>.panel-row-style {
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column
+        }
+        #pg-w594f821ad1e3b-0 .panel-grid-cell,
+        #pg-w594f821ad1e3b-1 .panel-grid-cell {
+            margin-right: 0
+        }
+        #pg-w594f821ad1e3b-0 .panel-grid-cell,
+        #pg-w594f821ad1e3b-1 .panel-grid-cell {
+            width: 100%
+        }
+        #pgc-w594f821ad1e3b-0-0,
+        #pgc-w594f821ad1e3b-1-0 {
+            margin-bottom: 30px
+        }
+        #pl-w594f821ad1e3b .panel-grid-cell {
+            padding: 0
+        }
+        #pl-w594f821ad1e3b .panel-grid .panel-grid-cell-empty {
+            display: none
+        }
+        #pl-w594f821ad1e3b .panel-grid .panel-grid-cell-mobile-last {
+            margin-bottom: 0
+        }
+        #pg-w594f821ad1e3b-0>.panel-row-style,
+        #pg-w594f821ad1e3b-1>.panel-row-style {
+            padding: 0 0 0 0
+        }
+    }
+
+    #pgc-w59521b95ebf8d-0-0,
+    #pgc-w59521b95ebf8d-0-1,
+    #pgc-w59521b95ebf8d-0-2 {
+        width: 33.3333%;
+        width: calc(33.3333% - (0.666666666667 * 0px))
+    }
+
+    #pg-w59521b95ebf8d-0,
+    #pg-w59521b95ebf8d-1,
+    #pl-w59521b95ebf8d .so-panel:last-child {
+        margin-bottom: 0
+    }
+
+    #pgc-w59521b95ebf8d-1-0 {
+        width: 100%;
+        width: calc(100% - (0 * 0px))
+    }
+
+    #pl-w59521b95ebf8d .so-panel {
+        margin-bottom: 30px
+    }
+
+    #pg-w59521b95ebf8d-0>.panel-row-style,
+    #pg-w59521b95ebf8d-1>.panel-row-style {
+        padding: 0 0 0 0
+    }
+
+    @media (max-width:780px) {
+        #pg-w59521b95ebf8d-0.panel-no-style,
+        #pg-w59521b95ebf8d-0.panel-has-style>.panel-row-style,
+        #pg-w59521b95ebf8d-1.panel-no-style,
+        #pg-w59521b95ebf8d-1.panel-has-style>.panel-row-style {
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column
+        }
+        #pg-w59521b95ebf8d-0 .panel-grid-cell,
+        #pg-w59521b95ebf8d-1 .panel-grid-cell {
+            margin-right: 0
+        }
+        #pg-w59521b95ebf8d-0 .panel-grid-cell,
+        #pg-w59521b95ebf8d-1 .panel-grid-cell {
+            width: 100%
+        }
+        #pgc-w59521b95ebf8d-0-0,
+        #pgc-w59521b95ebf8d-0-1 {
+            margin-bottom: 30px
+        }
+        #pl-w59521b95ebf8d .panel-grid-cell {
+            padding: 0
+        }
+        #pl-w59521b95ebf8d .panel-grid .panel-grid-cell-empty {
+            display: none
+        }
+        #pl-w59521b95ebf8d .panel-grid .panel-grid-cell-mobile-last {
+            margin-bottom: 0
+        }
+    }
+
+    #pgc-w595225dd91298-0-0,
+    #pgc-w595225dd91298-0-1,
+    #pgc-w595225dd91298-0-2 {
+        width: 33.3333%;
+        width: calc(33.3333% - (0.666666666667 * 0px))
+    }
+
+    #pg-w595225dd91298-0,
+    #pg-w595225dd91298-1,
+    #pg-w595225dd91298-2,
+    #pl-w595225dd91298 .so-panel:last-child {
+        margin-bottom: 0
+    }
+
+    #pgc-w595225dd91298-1-0,
+    #pgc-w595225dd91298-1-2,
+    #pgc-w595225dd91298-2-0,
+    #pgc-w595225dd91298-2-2 {
+        width: 15%;
+        width: calc(15% - (0.85 * 0px))
+    }
+
+    #pgc-w595225dd91298-1-1,
+    #pgc-w595225dd91298-2-1 {
+        width: 70%;
+        width: calc(70% - (0.3 * 0px))
+    }
+
+    #pl-w595225dd91298 .so-panel {
+        margin-bottom: 30px
+    }
+
+    #pg-w595225dd91298-0>.panel-row-style,
+    #pg-w595225dd91298-1>.panel-row-style,
+    #pg-w595225dd91298-2>.panel-row-style {
+        padding: 0 0 0 0
+    }
+
+    @media (max-width:780px) {
+        #pg-w595225dd91298-0.panel-no-style,
+        #pg-w595225dd91298-0.panel-has-style>.panel-row-style,
+        #pg-w595225dd91298-1.panel-no-style,
+        #pg-w595225dd91298-1.panel-has-style>.panel-row-style,
+        #pg-w595225dd91298-2.panel-no-style,
+        #pg-w595225dd91298-2.panel-has-style>.panel-row-style {
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column
+        }
+        #pg-w595225dd91298-0 .panel-grid-cell,
+        #pg-w595225dd91298-1 .panel-grid-cell,
+        #pg-w595225dd91298-2 .panel-grid-cell {
+            margin-right: 0
+        }
+        #pg-w595225dd91298-0 .panel-grid-cell,
+        #pg-w595225dd91298-1 .panel-grid-cell,
+        #pg-w595225dd91298-2 .panel-grid-cell {
+            width: 100%
+        }
+        #pgc-w595225dd91298-0-0,
+        #pgc-w595225dd91298-0-1,
+        #pgc-w595225dd91298-1-0,
+        #pgc-w595225dd91298-1-1,
+        #pgc-w595225dd91298-2-0,
+        #pgc-w595225dd91298-2-1 {
+            margin-bottom: 30px
+        }
+        #pl-w595225dd91298 .panel-grid-cell {
+            padding: 0
+        }
+        #pl-w595225dd91298 .panel-grid .panel-grid-cell-empty {
+            display: none
+        }
+        #pl-w595225dd91298 .panel-grid .panel-grid-cell-mobile-last {
+            margin-bottom: 0
+        }
+    }
