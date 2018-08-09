@@ -1,10 +1,10 @@
 <?php
 /**
-* 
+*
 */
 class MysteryShopper_model extends CI_Model
 {
-	
+
 	function __construct()
 	{
 		parent::__construct();
@@ -21,33 +21,33 @@ public function all_shopper()
 {
 
 		$this->db->select('*');
-		$this->db->from('mysteryShopperUsers');
+		$this->db->from('mysteryshopperusers');
 		$this->db->where('user_type', 'MYSTERYSHOPPER');
 		$query = $this->db->get();
 		$result = $query->result_array();
 		return $result;
-	
+
 }
 function add($data)
-	{ 
+	{
 		//$sql = $this->db->query("Select * from nww_client");
 
-		$sql=$this->db->insert('mysteryShopper',$data);
+		$sql=$this->db->insert('mysteryshopper',$data);
 
-		
+
 	}
 
 	public function update_ratting($id,$data)
 	{
 		$this->db->where('user_id', $id);
-        $this->db->update('mysteryShopper', $data);
-		
+        $this->db->update('mysteryshopper', $data);
+
 	}
-	
+
 	function searchMysteryShopperUser($user_id)
 	{
 		$this->db->select('*');
-		$this->db->from('mysteryShopper');
+		$this->db->from('mysteryshopper');
 		$this->db->where('user_id', $user_id);
 		$query = $this->db->get();
 		$result = $query->row();
@@ -57,7 +57,7 @@ function add($data)
 	function searchMysteryShopper($mysteryShopper_id)
 	{
 		$this->db->select('*');
-		$this->db->from('mysteryShopper');
+		$this->db->from('mysteryshopper');
 		$this->db->where('mysteryShopper_id', $mysteryShopper_id);
 		$query = $this->db->get();
 		$result = $query->row();
@@ -77,14 +77,14 @@ function add($data)
 	function update($id,$data)
 	{
 		   $this->db->where('mysteryShopper_id', $id);
-        $this->db->update('mysteryShopper', $data);
-     
+        $this->db->update('mysteryshopper', $data);
+
 	}
 
 	public function deleteMysteryShopper($id)
 	{
 		$this->db->where('mysteryShopper_id', $id);
-        $this->db->delete('mysteryShopper');
+        $this->db->delete('mysteryshopper');
 	}
 
 }

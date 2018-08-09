@@ -249,7 +249,8 @@
         'number_of_assignment'=>$branch_assignments[0][$i],
         'budget_for_each'=>$city_budgets[0][$i],
         );
-         $this->db->insert('client_assignment_cityBifraction',$data);
+        print_r($data);
+         $this->db->insert('client_assignment_citybifraction',$data);
       }
       //redirect
 

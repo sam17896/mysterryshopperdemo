@@ -32,7 +32,7 @@ Class Client_assignment_model extends CI_Model {
 	{
 		//$sql = $this->db->query("Select * from nww_client");
 
-		if($sql=$this->db->insert('Client_assignment',$data))
+		if($sql=$this->db->insert('client_assignment',$data))
 
 		{
 		return true;

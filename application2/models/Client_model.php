@@ -20,7 +20,7 @@ Class client_model extends CI_Model {
 	{
 		//$sql = $this->db->query("Select * from nww_client");
 
-		$sql=$this->db->get('mysteryShopper_client');
+		$sql=$this->db->get('mysteryshopper_client');
 		$result = $sql->result_array();
 		return $result;
 
@@ -31,7 +31,7 @@ Class client_model extends CI_Model {
 	{
 		//$sql = $this->db->query("Select * from nww_client");
 
-		if($sql=$this->db->insert('mysteryShopper_client',$data))
+		if($sql=$this->db->insert('mysteryshopper_client',$data))
 
 		{
 		return true;
@@ -46,9 +46,9 @@ Class client_model extends CI_Model {
         function search_by_user_id($user_id)
 	{
 		$this->db->select('*');
-		$this->db->from('mysteryShopper_client');
+		$this->db->from('mysteryshopper_client');
 		$this->db->where('user_id', $user_id);
-	
+
 		$query = $this->db->get();
 		$result = $query->result_array();
 		return $result;
@@ -63,7 +63,7 @@ Class client_model extends CI_Model {
 
         $this->db->select('*');
 
-        $this->db->from('mysteryShopper_client');
+        $this->db->from('mysteryshopper_client');
 
         $this->db->where('mysteryShopper_client_category', 'Food');
 
@@ -78,7 +78,7 @@ Class client_model extends CI_Model {
 	function searchnm($client_id)
 	{
 		$this->db->select('*');
-		$this->db->from('mysteryShopper_client');
+		$this->db->from('mysteryshopper_client');
 		$this->db->where('mysteryShopper_client_id', $client_id);
 		$query = $this->db->get();
 		$result = $query->row();
@@ -88,7 +88,7 @@ Class client_model extends CI_Model {
 	function getdetail($client_name)
 	{
 		$this->db->select('*');
-		$this->db->from('mysteryShopper_client');
+		$this->db->from('mysteryshopper_client');
 		$this->db->where('mysteryShopper_client_id', $client_name);
 		$query = $this->db->get();
 		$result = $query->result();
@@ -98,22 +98,20 @@ Class client_model extends CI_Model {
 	function update($id,$data)
 	{
 		   $this->db->where('mysteryShopper_client_id', $id);
-        $this->db->update('mysteryShopper_client', $data);
+        $this->db->update('mysteryshopper_client', $data);
 
 	}
 	function del($user_id,$client_id)
 	{
 		$this->db->where('user_id', $user_id);
 		$this->db->where('mysteryShopper_client_id' , $client_id);
-		$this->db->delete('mysteryShopper_client');
+		$this->db->delete('mysteryshopper_client');
 	}
 	function delClientinUserTable($user_id)
 	{
 		$this->db->where('user_id', $user_id);
 
-		$this->db->delete('mysteryShopperUsers');
+		$this->db->delete('mysteryshopperusers');
 	}
 }
-
-
 ?>

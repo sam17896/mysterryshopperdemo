@@ -1,7 +1,7 @@
 <?php
 
 Class Main_model extends CI_Model {
- 
+
 
 	function can_login($username,$password,$type)
 	{
@@ -9,7 +9,7 @@ Class Main_model extends CI_Model {
 		$this->db->where('user_password',$password);
 		$this->db->where('user_type',$type);
 
-		$query= $this->db->get('mysteryShopperUsers');
+		$query= $this->db->get('mysteryshopperusers');
 		 //echo $query->num_rows();
 		if($query->num_rows()==0)
 		{
@@ -20,11 +20,11 @@ Class Main_model extends CI_Model {
 			return $query->row();
 		}
 	}
-	
+
 	public function getAll($username)
 {
         $this->db->where('user_name',$username);
-	$query = $this->db->get('mysteryShopperUsers');
+	$query = $this->db->get('mysteryshopperusers');
 	$result= $query->row();
 	return $result;
 }
@@ -37,7 +37,7 @@ Class Main_model extends CI_Model {
 		$this->db->where('user_password',$password);
 		$this->db->where('user_type',$type);
 
-		$query= $this->db->get('mysteryShopperUsers');
+		$query= $this->db->get('mysteryshopperusers');
 		 //echo $query->num_rows();
 		if($query->num_rows()==0)
 		{

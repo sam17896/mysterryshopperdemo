@@ -196,35 +196,20 @@
 
           if($this->session->userdata('username'))
      {
+
+      if($expireAssignmentCheck != null){
      foreach($expireAssignmentCheck as $key => $value){
-
-
-
-         // $fromDate = $value['mysteryShopper_assignment_fromDate'];
-
           if($value['mysteryShopper_assignment_toDate'] < date("Y-m-d")){
-
-
-
 		      $id = $value['mysteryShopper_assignment_id'];
 		      $mystery_shopper_id = $this->session->userdata('id');
-
 		           try{
-
           //API URL
-
             $url2 = base_url().'index.php/Api/allUser';
-
             //API key
-
             $apiKey = 'CODEX@123';
-
             //Auth credentials
-
             $usernames = "admin";
-
             $password = "1234";
-
             //create a new cURL resource
 
             $ch = curl_init($url2);
@@ -327,6 +312,7 @@
 
 
          }
+        }
 
 
 
