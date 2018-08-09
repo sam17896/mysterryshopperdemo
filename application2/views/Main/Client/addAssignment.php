@@ -2,10 +2,10 @@
 
 
 $this->load->model('Client_model');
-$this->load->model('mysteryshopper_client_branch_model');
+$this->load->model('Client_assignment_model');
 $data=$this->Client_model->search_by_user_id($userid['id']);
 
- $client_data=$this->Client_model->get_branches_by_id($userid['id']);
+ $client_data=$this->Client_assignment_model->get_branches_by_id($userid['id']);
 
 
  $current_city=$client_data[0]['City'];

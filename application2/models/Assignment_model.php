@@ -7,7 +7,7 @@ Class Assignment_model extends CI_Model {
 	{
 		//$sql = $this->db->query("Select * from nww_client");
 
-		$sql=$this->db->get('mysteryShopper_assignment');
+		$sql=$this->db->get('mysteryshopper_assignment');
 		$result = $sql->result_array();
 		return $result;
 
@@ -26,7 +26,7 @@ Class Assignment_model extends CI_Model {
 	function complete_assignment_delivery_review($id)
 	{
 		$this->db->select('*');
-		$this->db->from('mysteryShopper_online_review');
+		$this->db->from('mysteryshopper_online_review');
 		$this->db->where('mysteryShopper_assignment_id', $id);
 		$query = $this->db->get();
 		$result = $query->row();
@@ -38,7 +38,7 @@ Class Assignment_model extends CI_Model {
 	{
 
 		$this->db->select('*');
-		$this->db->from('mysteryShopper_assignment');
+		$this->db->from('mysteryshopper_assignment');
 		$this->db->where('mysteryShopper_client_id', $client_id);
 		$this->db->where('mysteryShopper_assignment_status', 'Accept');
 		$query = $this->db->get();
@@ -55,7 +55,7 @@ Class Assignment_model extends CI_Model {
 	public function DeliveryAssignmentReview($data)
 	{
 
-		$sql=$this->db->insert('mysteryShopper_online_review',$data);
+		$sql=$this->db->insert('mysteryshopper_online_review',$data);
 
 	}
 
@@ -63,7 +63,7 @@ Class Assignment_model extends CI_Model {
 	{
 
 		$this->db->select('*');
-		$this->db->from('mysteryShopper_assignment');
+		$this->db->from('mysteryshopper_assignment');
 		$this->db->where('mysteryShopper_assignment_status', 'Working');
 		$query = $this->db->get();
 		$result = $query->result_array();
@@ -74,7 +74,7 @@ Class Assignment_model extends CI_Model {
 	{
 
 		$this->db->select('*');
-		$this->db->from('mysteryShopper_assignment');
+		$this->db->from('mysteryshopper_assignment');
 		$this->db->where('mysteryShopper_assignment_status', 'Accept');
 		$query = $this->db->get();
 		$result = $query->result_array();
@@ -84,7 +84,7 @@ Class Assignment_model extends CI_Model {
 	{
 
 		$this->db->select('*');
-		$this->db->from('mysteryShopper_assignment');
+		$this->db->from('mysteryshopper_assignment');
 		$this->db->where('mysteryShopper_assignment_status', 'Expired');
 		$query = $this->db->get();
 		$result = $query->result_array();
@@ -94,7 +94,7 @@ Class Assignment_model extends CI_Model {
 	{
 
 		$this->db->select('*');
-		$this->db->from('mysteryShopper_assignment');
+		$this->db->from('mysteryshopper_assignment');
 		$this->db->where('mysteryShopper_assignment_status', 'Reject');
 		$query = $this->db->get();
 		$result = $query->result_array();
@@ -105,7 +105,7 @@ Class Assignment_model extends CI_Model {
 	{
 
 		$this->db->select('*');
-		$this->db->from('mysteryShopper_assignment');
+		$this->db->from('mysteryshopper_assignment');
 		$this->db->where('mysteryShopper_assignment_status', 'Completed');
 		$query = $this->db->get();
 		$result = $query->result_array();
@@ -115,7 +115,7 @@ Class Assignment_model extends CI_Model {
 	function get_all_open_status()
 	{
 		$this->db->select('*');
-		$this->db->from('mysteryShopper_assignment');
+		$this->db->from('mysteryshopper_assignment');
 		$this->db->where('mysteryShopper_assignment_status', 'Open');
 		$query = $this->db->get();
 		$result = $query->result_array();
@@ -144,7 +144,7 @@ Class Assignment_model extends CI_Model {
 	{
 
 		$this->db->select('*');
-		$this->db->from('mysteryShopper_online_review');
+		$this->db->from('mysteryshopper_online_review');
 		$query = $this->db->get();
 		$result = $query->result_array();
 		return $result;
@@ -161,7 +161,7 @@ Class Assignment_model extends CI_Model {
 	function edit_searchnm_delivery($review_id)
 	{
 		$this->db->select('*');
-		$this->db->from('mysteryShopper_online_review');
+		$this->db->from('mysteryshopper_online_review');
 		$this->db->where('online_review_id', $review_id);
 		$query = $this->db->get();
 		$result = $query->row();
@@ -177,7 +177,7 @@ Class Assignment_model extends CI_Model {
 	{
 
 		$this->db->select('*');
-		$this->db->from('mysteryShopper_assignment');
+		$this->db->from('mysteryshopper_assignment');
 		$this->db->where('mysteryShopper_id', $id);
 		$this->db->where('mysteryShopper_assignment_status', 'Working');
 		$query = $this->db->get();
@@ -189,7 +189,7 @@ Class Assignment_model extends CI_Model {
 	{
 		//$sql = $this->db->query("Select * from nww_client");
 
-		$sql=$this->db->insert('mysteryShopper_assignment',$data);
+		$sql=$this->db->insert('mysteryshopper_assignment',$data);
 
 
 	}
@@ -207,7 +207,7 @@ Class Assignment_model extends CI_Model {
 	function getdetail($client_name)
 	{
 		$this->db->select('*');
-		$this->db->from('mysteryShopper_assignment');
+		$this->db->from('mysteryshopper_assignment');
 		$this->db->where('mysteryShopper_assignment_id', $client_name);
 		$query = $this->db->get();
 		$result = $query->result();
@@ -222,14 +222,14 @@ Class Assignment_model extends CI_Model {
 	function updateStatus($id,$data)
 	{
 		   $this->db->where('mysteryShopper_client_id', $id);
-        $this->db->update('mysteryShopper_assignment', $data);
+        $this->db->update('mysteryshopper_assignment', $data);
 
 	}
 	function del($id)
 	{
 
 		$this->db->where('mysteryShopper_assignment_id' , $id);
-		$this->db->delete('mysteryShopper_assignment');
+		$this->db->delete('mysteryshopper_assignment');
 	}
 	function review_update($id,$data)
 	{
@@ -240,7 +240,7 @@ Class Assignment_model extends CI_Model {
 	function review_update_delivery($id,$data)
 	{
 		   $this->db->where('online_review_id', $id);
-        $this->db->update('mysteryShopper_online_review', $data);
+        $this->db->update('mysteryshopper_online_review', $data);
 
 	}
 

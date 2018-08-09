@@ -209,7 +209,7 @@
      print_r($city_budgets);
      $city_assignments[]=$this->input->post('city_assignments');
 
-     $client_data=$this->Client_model->get_branches_by_id($user_id);
+     $client_data=$this->Client_assignment_model->get_branches_by_id($user_id);
 
      $Mdate= date('Y-m-d', strtotime('+1 month'));
     $monthNum=substr($Mdate,5,2);

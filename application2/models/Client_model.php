@@ -7,7 +7,7 @@ Class client_model extends CI_Model {
 
 		parent::__construct();
 		$this->load->model('User_model');
-		$this->load->model('Mysteryshopper_client_branch_model');
+	//	$this->load->model('Mysteryshopper_client_branch_model');
 		$this->load->model('Assignment_model');
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('form_validation');
@@ -52,10 +52,10 @@ Class client_model extends CI_Model {
 		$result = $query->result_array();
 		return $result;
 	}
-	function get_branches_by_id($user_id)
-{
- return $this->Mysteryshopper_client_branch_model->search_by_user_id($user_id);
-}
+	// function get_branches_by_id($user_id)
+	// {
+	// 	return $this->Mysteryshopper_client_branch_model->search_by_user_id($user_id);
+	// }
 	function searchfood()
 
     {
