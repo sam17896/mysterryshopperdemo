@@ -8,7 +8,6 @@
 			parent::__construct();
             $this->load->model('User_model');
       $this->load->model('Client_model');
-      $this->load->model('Mysteryshopper_client_branch_model');
       $this->load->model('Assignment_model');
       $this->load->model('Client_assignment_model');
       $this->load->helper(array('form', 'url'));
@@ -194,7 +193,7 @@
         //print_r(array_values($data));
 
 
-        $this->Mysteryshopper_client_branch_model->add($data2);
+        $this->Client_model->add_branch($data2);
         //Loading View
         redirect('/Client') ;
 
