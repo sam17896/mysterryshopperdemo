@@ -4,22 +4,22 @@ Class Mysteryshopper_client_branch_model extends CI_Model {
 
 
 	function get_all()
-	{ 
+	{
 		//$sql = $this->db->query("Select * from nww_client");
 
 		$sql=$this->db->get('mysteryshopper_client_branch');
 		$result = $sql->result_array();
 		return $result;
 
-		
+
 	}
 
 	function add($data)
-	{ 
+	{
 		//$sql = $this->db->query("Select * from nww_client");
 
 		if($sql=$this->db->insert('mysteryshopper_client_branch',$data))
-		
+
 		{
 		return true;
 		}
@@ -28,13 +28,13 @@ Class Mysteryshopper_client_branch_model extends CI_Model {
 		return false;
 		}
 
-		
+
 	}
         function search_by_user_id($user_id)
 	{
 		$this->db->select('*');
 		$this->db->from('mysteryshopper_client_branch');
-	  
+
 		$this->db->where('client_id', $user_id);
 	    $this->db->order_by('City');
 		$query = $this->db->get();
@@ -83,7 +83,7 @@ Class Mysteryshopper_client_branch_model extends CI_Model {
 	{
 		   $this->db->where('mysteryShopper_client_id', $id);
         $this->db->update('mysteryShopper_client', $data);
-     
+
 	}
 	function del($user_id,$client_id)
 	{
@@ -94,7 +94,7 @@ Class Mysteryshopper_client_branch_model extends CI_Model {
 	function delClientinUserTable($user_id)
 	{
 		$this->db->where('user_id', $user_id);
-		
+
 		$this->db->delete('mysteryShopperUsers');
 	}
 }
