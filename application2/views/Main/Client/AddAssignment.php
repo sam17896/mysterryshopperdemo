@@ -59,7 +59,7 @@ $data=$this->Client_model->search_by_user_id($userid['id']);
 <div class="form-group">
 <div class="col-md-6">
 <label for="branch">Budget of each assignment for  '. $client_data[0]['City'].'</label>
-<input type="text" class="form-control budget" name="budgets[]" id="'. $client_data[0]['City'].'">
+<input type="text" class="form-control budget" name="budgets[]" id="'.  str_replace(' ', '_',$client_data[0]['City']).'">
 
 </div>
 </div>
@@ -76,7 +76,7 @@ $data=$this->Client_model->search_by_user_id($userid['id']);
    echo' <div class="form-group">
     <label for="branch">Branch Address :'. $row['Address'].'</label>
     <input type="text" class="form-control" name="branch_assignments[]" id="text" >
-    <input type="text" class="form-control hidden '.$client_data[$i]['City'].'" name="city_budgets[]"  >
+    <input type="text" class="form-control hidden '. str_replace(' ', '_',$client_data[$i]['City']).'" name="city_budgets[]"  >
 
   </div> ';
 
@@ -94,7 +94,7 @@ $data=$this->Client_model->search_by_user_id($userid['id']);
    <div class="form-group">
    <div class="col-md-6">
    <label for="branch">Budget of  each assignment for  '. $client_data[$i]['City'].'</label>
-   <input type="text" class="form-control budget"  name="budgets[]" id="'.$client_data[$i]['City'].'">
+   <input type="text" class="form-control budget"  name="budgets[]" id="'. str_replace(' ', '_',$client_data[$i]['City']).'">
    </div>
    </div>
 
@@ -104,8 +104,8 @@ $data=$this->Client_model->search_by_user_id($userid['id']);
      echo' <div class="form-group">
      <label for="branch">Number of assignment for Branch Address :'. $row['Address'].'</label>
      <input type="text" class="form-control" name="branch_assignments[]" id="text" >
-      <input type="text" class="form-control hidden '.$client_data[$i]['City'].'" name="city_budgets[]"  >
-   </div> ';
+     <input type="text" class="form-control hidden '. str_replace(' ', '_',$client_data[$i]['City']).'" name="city_budgets[]"  >
+     </div> ';
 
    }
     echo "<br>";
