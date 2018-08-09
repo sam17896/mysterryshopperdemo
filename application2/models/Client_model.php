@@ -7,7 +7,6 @@ Class client_model extends CI_Model {
 
 		parent::__construct();
 		$this->load->model('User_model');
-		$this->load->model('Client_model');
 		$this->load->model('mysteryshopper_client_branch_model');
 		$this->load->model('Assignment_model');
 		$this->load->helper(array('form', 'url'));
