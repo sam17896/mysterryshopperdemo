@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
 
 Class Mysteryshopper_client_branch_model extends CI_Model {
 
