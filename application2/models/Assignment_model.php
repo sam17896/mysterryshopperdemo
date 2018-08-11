@@ -168,6 +168,16 @@ Class Assignment_model extends CI_Model {
 		return $result;
 	}
 
+	function getShopperId($assignmentid){
+		$this->db->select('shopper_id');
+		$this->db->from('shopper_assignment');
+		$this->db->where('id', $assignmentid);
+		$query = $this->db->get();
+		$result = $query->row();
+		return $result;
+
+	}
+
 
 
 

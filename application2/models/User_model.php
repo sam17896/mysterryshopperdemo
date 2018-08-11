@@ -193,5 +193,10 @@ Class User_model extends CI_Model {
         	$this->db->delete('mysteryshopperusers');
 	}
 
+	function getTotalTakenAssingmentCount($id){
+		$query = $this->db->query("Select takenAssignment from mysteryshopperusers where user_id = $id");
+		return $query->row();
+	}
+
 }
 ?>

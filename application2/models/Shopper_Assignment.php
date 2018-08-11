@@ -18,7 +18,7 @@ Class Shopper_Assignment extends CI_Model {
 
 	function getMyAssignment($id){
 
-		$query = $this->db->query("SELECT * FROM `mysteryshopper_client`, shopper_assignment, client_assignment WHERE client_assignment.assignment_id = shopper_assignment.assignment_id and client_assignment.client_id = mysteryshopper_client.user_id and status = 'WORKING'");
+		$query = $this->db->query("SELECT * FROM `mysteryshopper_client`, shopper_assignment, client_assignment WHERE client_assignment.assignment_id = shopper_assignment.assignment_id and client_assignment.client_id = mysteryshopper_client.user_id and status = 'WORKING' and shopper_assignment.shopper_id = $id");
 		$result = $query->result_array();
 		return $result;
 	}

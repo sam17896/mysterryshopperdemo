@@ -90,48 +90,18 @@
     	  $password = '1234';
 
 
-    $url =  base_url().'index.php/Api/get_assignment';
-    try{
-            $url2 = base_url().'index.php/Api/allUser';
-            $apiKey = 'CODEX@123';
-            $usernames = "admin";
-            $password = "1234";
-            $ch = curl_init($url2);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-            curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-API-KEY: " . $apiKey));
-            curl_setopt($ch, CURLOPT_USERPWD, "$usernames:$password");
-            $result = curl_exec($ch);
-            $result = json_decode($result, true);
-            curl_close($ch);
-            $data = $result['data'];
-          //print_r($data);
-
-        foreach ($data as $key => $value)
-        {
-          if($value['user_id'] == $mystery_shopper_id && $value['user_type'] =='MYSTERYSHOPPER' )
-          {
-                $noOfAssignment =    $value['takenAssignment']+1;
-          }
-        }
-       }
-         catch(Exception $e)
-         {
-          echo $e;
-         }
-
+        $url =  base_url().'index.php/Api/get_assignment';
+        $noOfAssignment = $this->User_model->getTotalTakenAssingmentCount($mystery_shopper_id);
    $data = array(
         'mystery_shopper_id' => $mystery_shopper_id,
         'id' => $id,
         'budget'=> $budget,
-        'takenAssignment' => $noOfAssignment,
+        'takenAssignment' => $noOfAssignment->takenAssignment + 1,
     );
 			$user_id =$mystery_shopper_id;
 
-
         $takenAssignment = array(
-            'takenAssignment' => $noOfAssignment,
+            'takenAssignment' => $noOfAssignment->takenAssignment + 1,
         );
 		$this->User_model->update($user_id,$takenAssignment);
 

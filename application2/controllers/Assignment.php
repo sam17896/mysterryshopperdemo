@@ -73,6 +73,14 @@
           'date' => date('Y-m-d')
            );
 
+           $userId = $this->Assignment_model->getShopperId($id);
+           $noOfAssignment = $this->User_model->getTotalTakenAssingmentCount($userId->shopper_id);
+           $takenAssignment = array(
+            'takenAssignment' => $noOfAssignment->takenAssignment - 1,
+          );
+		        $this->User_model->update($userId->shopper_id,$takenAssignment);
+
+
          $this->Assignment_model->update($id,$statusAccept);
          redirect('/assignment') ;
 
@@ -167,8 +175,16 @@
           'status' => $status,
            );
 
-         $this->Assignment_model->update($id,$statusReject);
-         redirect('/assignment') ;
+           $userId = $this->Assignment_model->getShopperId($id);
+           $noOfAssignment = $this->User_model->getTotalTakenAssingmentCount($userId->shopper_id);
+           $takenAssignment = array(
+            'takenAssignment' => $noOfAssignment->takenAssignment - 1,
+          );
+		        $this->User_model->update($userId->shopper_id,$takenAssignment);
+
+
+            $this->Assignment_model->update($id,$statusReject);
+            redirect('/assignment') ;
 
 
       }

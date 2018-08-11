@@ -93,7 +93,7 @@
                             Category: <span style="font-weight: normal;">Dine</span><br>
                             Budget: <span style="font-weight: normal;"><?php echo $value['budget_for_each']; ?></span><br>
                             location: <span style="font-weight: normal;"><?php echo $value['mysteryShopper_client_address'];?></span><br>
-                            Branch City/Address: <span style="font-weight: normal;"><?php echo $value['City'] - $value['Address'];?></span><br>
+                            Branch City/Address: <span style="font-weight: normal;"><?php echo $value['City'] ?> - <?php echo $value['Address'];?></span><br>
                             Assignment Available: <span style="font-weight: normal;"><?php echo $value['number_of_assignment'];?></span><br>
                             </center>
                         <button type="button" class="btn btn-success">Show Detail</button>
