@@ -1791,7 +1791,7 @@ function updateAssignmentReview()
               $data1['accept']=$this->Wallet->getTotalAssigmentApproved($this->session->userdata('id'));
               $data1['reject']=$this->Wallet->getTotalAssigmentRejected($this->session->userdata('id'));
               $data1['reject_amount']=$this->Wallet->getTotalAssigmentRejectedAmount($this->session->userdata('id'));
-              $data1['payable_amount']=$this->Wallet->getTotalAssigmentPending($this->session->userdata('id'));
+              $data1['payable_amount']=$this->Wallet->getTotalAssignmentApprovedAmount($this->session->userdata('id'));
               $data1['amount']=$this->Wallet->getTotalAmount($this->session->userdata('id'));
               $data['users']= $this->session->userdata('username');
               $data['user_id']=$this->session->userdata('id');
