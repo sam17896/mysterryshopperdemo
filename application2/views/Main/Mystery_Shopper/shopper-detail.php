@@ -12,7 +12,7 @@
                 <tr>
                   <th>S.No</th>
                   <th>Month</th>
-                  <th>Status</th>
+                  <th>Client Name</th>
                   <th>Budget</th>
                   <th>Ref Id</th>
                   <th>Assignment Id</th>
@@ -32,7 +32,7 @@
                                             <tr align="center">
                                               <td><?php echo $no; ?></td>
                                             <td><?php echo $value['month']; ?></td>
-                                            <td><?php echo $value['status']; ?></td>
+                                            <td><?php echo $value['mysteryShopper_client_name']; ?></td>
                                             <td><?php echo $value['budget']; ?></td>
                                             <td><?php echo $value['ref_id']; ?></td>
                                             <td>

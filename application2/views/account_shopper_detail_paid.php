@@ -17,10 +17,11 @@
     <div class="card-header">
         <a class="btn btn-success add-client" href="<?php echo site_url('client/Accounts')?>">Shoppers Payable</a>
         <a class="btn btn-success add-client" href="<?php echo site_url('client/ShopperPaid')?>">Shoppers Paid</a>
-        <a class="btn btn-success add-client" href="<?php echo site_url('Account/Clients')?>">Clients Paid</a>
-        <a class="btn btn-success add-client" href="<?php echo site_url('Account/Cycle')?>">Client Payable</a>
+        <a class="btn btn-success add-client" href="<?php echo site_url('Account/Clients')?>">Total Received from Clients</a>
+        <a class="btn btn-success add-client" href="<?php echo site_url('Account/Cycle')?>">Clients Receivable</a>
         <a class="btn btn-success add-client" href="<?php echo site_url('Account/Bank')?>">Bank</a>
         <a class="btn btn-success add-client" href="<?php echo site_url('Account/Tax')?>">Tax</a>
+
     </div>
 
     <div class="table-responsive">
@@ -30,7 +31,7 @@
                   <th>Special Note</th>
                   <th>Category</th>
                   <th>Budget</th>
-                  <th>Payout</th>
+                  <th>Approved Date</th>
                   <th>Status</th>
                   <th>Ref Id</th>
                 </tr>
@@ -44,7 +45,7 @@
                 <td><?php echo $value['speical_note']; ?></td>
                 <td>Dine</td>
                 <td><?php echo $value['budget']; ?></td>
-                <td><?php echo $value['total_payout']; ?></td>
+                <td><?php echo $value['date']; ?></td>
                 <td><?php echo $value['status']; ?></td>
                 <td><?php echo $value['ref_id']; ?></td>
             </tr>

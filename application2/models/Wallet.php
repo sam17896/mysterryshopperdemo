@@ -14,7 +14,7 @@ Class Wallet extends CI_Model {
 	}
 	function getTotalAssigmentApproved($id)
 	{
-		$query = $this->db->query("select count(*) as total from shopper_assignment where status = 'Accept' and shopper_id = {$id}");
+		$query = $this->db->query("select count(*) as total from shopper_assignment where status = 'Accept' or status = 'Closed' and shopper_id = {$id}");
         $result= $query->result_array();
         return $result;
     }
@@ -51,7 +51,7 @@ Class Wallet extends CI_Model {
     }
 
     function getAllAssignmentDetailPaid($id){
-        $query = $this->db->query("select * from client_assignment, shopper_assignment where client_assignment.assignment_id = shopper_assignment.assignment_id and shopper_assignment.shopper_id = $id and shopper_assignment.status = 'Closed'");
+        $query = $this->db->query("select * from client_assignment, shopper_assignment, mysteryshopper_client where client_assignment.assignment_id = shopper_assignment.assignment_id and shopper_assignment.shopper_id = $id and client_assignment.client_id = mysteryshopper_client.user_id and shopper_assignment.status = 'Closed'");
         $result= $query->result_array();
         return $result;
     }
