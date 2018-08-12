@@ -81,8 +81,6 @@ public function allfood_get(){
 
      public function ReviewAdd_post()
     {
-
-
    try{
 
        $AssignmentReviews= array(
@@ -121,21 +119,9 @@ public function allfood_get(){
 		   'image5' => $this->input->post('image5'),
 		   'shopper_id'=>$this->input->post('mystery_shopper_id')
 
-
-
-
 	   );
 
 	   $this->Shopper_Assignment->updateAssignmentStatus($this->input->post('mysteryShopper_assignment_id'),'Completed');
-    //    $user_id = $this->input->post('mystery_shopper_id');
-    //        $takenAssignment = array(
-    //         'takenAssignment' => $this->input->post('takenAssignment'),
-
-
-    //     );
-	// 	$this->User_model->update($user_id,$takenAssignment);
-
-
 
         $this->Assignment_model->AssignmentReview($AssignmentReviews);
 

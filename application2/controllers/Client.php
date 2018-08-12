@@ -7,10 +7,10 @@
 
 			parent::__construct();
             $this->load->model('User_model');
-      $this->load->model('Client_model');
-      $this->load->model('Assignment_model');
-      $this->load->model('Client_assignment_model');
-      $this->load->helper(array('form', 'url'));
+            $this->load->model('Client_model');
+            $this->load->model('Assignment_model');
+            $this->load->model('Client_assignment_model');
+            $this->load->helper(array('form', 'url'));
 
 
 
