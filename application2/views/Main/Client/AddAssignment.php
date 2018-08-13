@@ -2,7 +2,6 @@
 
 
 $this->load->model('Client_model');
-$this->load->model('mysteryshopper_client_branch_model');
 $data=$this->Client_model->search_by_user_id($userid['id']);
 
  $client_data=$this->Client_model->get_branches_by_id($userid['id']);
