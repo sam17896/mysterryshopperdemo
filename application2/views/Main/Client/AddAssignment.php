@@ -2,9 +2,9 @@
 
 
 $this->load->model('Client_model');
-$data=$this->Client_model->search_by_user_id($userid['id']);
+// $data=$this->Client_model->search_by_user_id($userid['id']);
 
- $client_data=$this->Client_model->get_branches_by_id($userid['id']);
+ $client_data=$this->Client_model->search_by_user_id($userid['id']);
  if(sizeof($client_data)==0)
   { ?>
 
