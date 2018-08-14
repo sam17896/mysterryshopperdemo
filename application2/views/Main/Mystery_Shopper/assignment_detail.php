@@ -204,12 +204,13 @@
                     <div class="row">
                         <div class="col-md-12">
 
-                            <h3><center>Shopper’s Pack:</center></h3>
+
+                     <h3><center>Shopper’s Pack:</center></h3>
                             <p><strong>Name of Client: </strong><?php echo $company_name;?>.</P>
                             <p><strong>Location: </strong><?php echo $selected_assignment['City'].'-'.$selected_assignment['Address'];?>.</p>
                             <p><strong>Month: </strong><?php echo $selected_assignment['month']; ?>.</p>
                             <p><strong>Description: </strong><?php echo $selected_assignment['speical_note'];?>.</p>
-                            <p><strong>Dine/Delivery: </strong> Dine</p>
+                            <p><strong>Dine/Delivery: </strong> <?php echo $selected_assignment['type'];?></p>
                             <p><strong>Budget: </strong> <?php echo $selected_assignment['budget_for_each'];?></p>
 
 

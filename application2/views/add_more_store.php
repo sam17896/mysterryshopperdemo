@@ -1,4 +1,4 @@
-<section class="content"> 
+<section class="content">
   <div class="content-wrapper">
     <div class="container-fluid">
       <!-- Breadcrumbs-->
@@ -22,10 +22,10 @@
             </div>
           </div>
             </div>
-       
 
-  
-           
+
+
+
 
             </div>
           </div>
@@ -42,8 +42,8 @@
               </div>
   </div>
 
-          
-        
+
+
 
 
 
@@ -53,7 +53,7 @@
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
-    
+
 </body>
 
 </html>
@@ -75,4 +75,3 @@ function readURL(input) {
     }
 </script>
 
-  

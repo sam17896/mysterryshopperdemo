@@ -90,7 +90,7 @@
                     <a style="color: black;" href="<?php echo site_url('MysteryShopperLoggedin/assignment_detail/'.$id.'/'.$branch_id) ?>" rel="nofollow">
                         <img alt="Dine" class="siteImg" style="width:350px;height:200px;" src="<?php echo $image_path;?>" title="Dine">
                             <center >
-                            Category: <span style="font-weight: normal;">Dine</span><br>
+                            Category: <span style="font-weight: normal;"><?php echo $value['type']; ?></span><br>
                             Budget: <span style="font-weight: normal;"><?php echo $value['budget_for_each']; ?></span><br>
                             location: <span style="font-weight: normal;"><?php echo $value['mysteryShopper_client_address'];?></span><br>
                             Branch City/Address: <span style="font-weight: normal;"><?php echo $value['City'] ?> - <?php echo $value['Address'];?></span><br>

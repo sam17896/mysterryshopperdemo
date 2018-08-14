@@ -44,7 +44,7 @@
             <tr align="center">
             <!-- <td><img style="width:50px;height:50px;" src="<?php echo $image_path;?>"></td> -->
                 <td><?php echo $value['speical_note']; ?></td>
-                <td>Dine</td>
+                <td><?php echo $value['budget']; ?></td>
                 <td><?php echo $value['budget']; ?></td>
                 <td><?php echo $value['total_payout']; ?></td>
                 <td><?php echo $value['status']; ?></td>

@@ -205,11 +205,10 @@
      $user_id=$this->input->post('user_id');
      $branch_assignments[]=$this->input->post('branch_assignments');
      $city_budgets[]=$this->input->post('city_budgets');
-     print_r($city_budgets);
      $city_assignments[]=$this->input->post('city_assignments');
 
      $client_data=$this->Client_assignment_model->get_branches_by_id($user_id);
-
+      $client = $this->Client_model->search_by_user_id($user_id);
      $Mdate= date('Y-m-d', strtotime('+1 month'));
     $monthNum=substr($Mdate,5,2);
      $year=subStr($Mdate,0,4);
@@ -217,23 +216,30 @@
      $monthName = $dateObj->format('F');
      $assignment_number=$this->input->post('assignment_number');
      $total=0;
+     $noofassignment = 0;
 
       //  $note=$this->input->post('note');
       $note="hello ";
-        for ($i=0;$i<=sizeof($city_assignments);$i++)
+        for ($i=0;$i<=sizeof($city_assignments)+1;$i++)
         {
-          echo "<br>".$city_assignments[0][$i];
+         // echo "<br>".$city_assignments[0][$i];
 
+          $noofassignment = $noofassignment + (int)$city_assignments[0][$i];
           $total=$total+ (int)$city_assignments[0][$i]*(int)$city_budgets[0][$i];
 
        }
+        $serviceCharges = $total * (($client[0]['service_charges'])/100);
+        $tax = $serviceCharges * .30;
         $data = array(
 
         'client_id'=> $user_id,
         'Month'=>$monthName.$year,
         'total_budget'=>$total,
-        'total_payout'=>$total+($total*.30),
+        'tax'=>$tax,
+        'service_charges'=>$serviceCharges,
+        'total_payout'=>$total + $serviceCharges + $tax,
         'speical_note'=>$note,
+        'type'=>$this->input->post('category')
 
         );
 
@@ -248,13 +254,20 @@
         'number_of_assignment'=>$branch_assignments[0][$i],
         'budget_for_each'=>$city_budgets[0][$i],
         );
-        print_r($data);
          $this->db->insert('client_assignment_citybifraction',$data);
       }
       //redirect
+      $invoice['No_of_assignment'] = $noofassignment;
+      $invoice['Total_payout'] = $total + $serviceCharges + $tax;
+      $invoice['Total_budget'] = $total;
+      $invoice['Sevice_charges'] = $serviceCharges;
+      $invoice['Tax'] = $tax;
+      $data['users']= $this->session->userdata('username');
 
-
-		 		redirect(base_url().'index.php/ClientLoggedin');
+      $data['userid']=$this->session->userdata();
+      $this->load->view("Main/Client/Header",$data);
+      $this->load->view("Main/Client/invoice", $invoice);
+      $this->load->view("Main/Client/Footer");
      }
      public function insert()
      {

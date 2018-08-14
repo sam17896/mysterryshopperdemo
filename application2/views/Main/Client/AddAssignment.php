@@ -64,13 +64,13 @@ $data=$this->Client_model->search_by_user_id($userid['id']);
  echo' <div class="form-group">
  <div class="col-md-6">
  <label for="branch">number of assignments for  '. $client_data[0]['City'].'</label>
- <input type="text" class="form-control assignment_numbers" name="city_assignments[]" id="'. $client_data[0]['City'].'_number">
+ <input type="text" class="form-control assignment_numbers" name="city_assignments[]" id="'. str_replace(' ', '_',$client_data[0]['City']).'_nums">
 </div>
 </div>
 <div class="form-group">
 <div class="col-md-6">
 <label for="branch">Budget of each assignment for  '. $client_data[0]['City'].'</label>
-<input type="text" class="form-control budget" name="budgets[]" id="'.  str_replace(' ', '_',$client_data[0]['City']).'">
+<input type="text" class="form-control budget" name="budgets[]" id="'. str_replace(' ', '_',$client_data[0]['City']).'">
 
 </div>
 </div>
@@ -139,7 +139,14 @@ $data=$this->Client_model->search_by_user_id($userid['id']);
   }
     ?>
 </div>
-    </div>  <!-- Accordian end here -->
+    </div>
+
+
+              <select class="form-control" name="category" required>
+                 <option selected="true" disabled="disabled">Select Category</option>
+                  <option>Dine</option>
+                  <option>Delivery</option>
+               </select>
 
    <input type="submit"  class=" col-md-12 primary-btn"  value="Submit"></input>
 

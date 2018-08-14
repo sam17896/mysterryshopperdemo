@@ -47,7 +47,7 @@
             <tr align="center">
             <td><?php echo $value['assignment_id']; ?></td>
             <td><?php echo $value['total_budget']; ?></td>
-            <td><?php echo $value['total_payout']-$value['total_budget']; ?></td>
+            <td><?php echo $value['tax']; ?></td>
             <td><?php echo $value['total_payout']; ?></td>
         <?php } } else { echo 'No Tax this month'; }?>
               </tbody>

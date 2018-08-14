@@ -73,9 +73,17 @@
          $data['shopperCity'] = $this->MysteryShopper_model->searchMysteryShopperUser($user_id);
          $data['selected_assignment'] = $this->Client_assignment_model->searchAssignment($id,$branch_id)[0];
 
-         $this->load->view("Main/Mystery_Shopper/Header",$data);
-         $this->load->view("Main/Mystery_Shopper/assignment_detail",$data);
-         $this->load->view("Main/Mystery_Shopper/Footer");
+         if($this->session->userdata('username') && $this->session->userdata('type') == 'MYSTERYSHOPPER')
+         {
+             $this->load->view("Main/Mystery_Shopper/Header",$data);
+             $this->load->view("Main/Mystery_Shopper/assignment_detail",$data);
+             $this->load->view("Main/Mystery_Shopper/Footer");
+
+             }
+              else
+             {
+              redirect(base_url().'index.php/Web/login');
+             }
 
       }
        public function get_assignment()

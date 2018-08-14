@@ -204,7 +204,7 @@ Class Assignment_model extends CI_Model {
 
 	}
 
-	function searchnm($id)
+	function searchUpdated($id)
 	{
 		$this->db->select('*');
 		$this->db->from('shopper_assignment');

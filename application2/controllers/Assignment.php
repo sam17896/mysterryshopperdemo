@@ -95,7 +95,7 @@
 
 
             $data['user']= $this->session->userdata('username');
-             $data['selected_assignment']=$this->Assignment_model->searchnm($id);
+             $data['selected_assignment']=$this->Assignment_model->searchUpdated($id);
             $this->load->view("Header",$data);
             $this->load->view("assignmentEditDescriptionView",$data);
             $this->load->view("Footer");
@@ -114,7 +114,7 @@
       {
           $id = $this->input->post('id');
           $editInstruction = $this->input->post('editReport');
-          $userId=$this->Assignment_model->searchnm($id)->shopper_id;
+          $userId=$this->Assignment_model->searchUpdated($id)->shopper_id;
           $mySteryShopperEmail=$this->User_model->searchnm($userId)->user_email;
           $mySteryShopperName ='MYSTERYSHOPPERS PAKISTAN';
           $status = 'Edit';

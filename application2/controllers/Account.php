@@ -18,8 +18,8 @@
             if($this->session->userdata('username')  && $this->session->userdata('type') == 'ADMIN')
             {
 
-                $data1['total_client']=$this->Accounts->getTotalFromClient()->total * .3  + $this->Accounts->getTotalFromClient()->total;
-                $data1['total_shopper']=$this->Accounts->getTotalFromClient()->total;
+                $data1['total_client']=$this->Accounts->getTotalFromClient()->total;
+                $data1['total_shopper']=$this->Accounts->getTotalFromShopper()->total;
 
 
                 $data['user']= $this->session->userdata('username');

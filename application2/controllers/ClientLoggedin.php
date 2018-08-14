@@ -82,6 +82,10 @@
           $this->load->view("Main/Footer");
          }
       }
+
+  public function invoice(){
+
+  }
    public function addAssignment()
    {
       $data['users']= $this->session->userdata('username');
