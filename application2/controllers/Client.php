@@ -220,7 +220,7 @@
 
       //  $note=$this->input->post('note');
       $note="hello ";
-        for ($i=0;$i<=sizeof($city_assignments)+1;$i++)
+        for ($i=0;$i<=sizeof($city_assignments);$i++)
         {
          // echo "<br>".$city_assignments[0][$i];
 
