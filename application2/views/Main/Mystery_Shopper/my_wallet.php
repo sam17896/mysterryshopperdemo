@@ -1,50 +1,49 @@
+<style>
+#wrap {
+   width:600px;
+   margin:0 auto;
+}
+#left_col {
+   float:left;
+   width:300px;
+}
+#right_col {
+   float:right;
+   width:300px;
+}
+</style>
 <div class="full-width generic-section">
     <div class="container chosen-top">
-        <div class="row">
-            <div class="col-md-offset-1 col-md-10 white-bg">
-              <div class="table-responsive">
-                <h1 class="text-center">Assignments</h1>
-                <table id="data-table" class="table table-bordered">
-                  <thead>
-                    <tr>
-                        <th>Total Approved</th>
-                        <th>Total Pending</th>
-                        <th>Total Rejected</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr align="center">
-                        <td><?php echo $accept[0]['total']; ?></td>
-                        <td><?php echo $pending[0]['total']; ?></td>
-                        <td><?php echo $reject[0]['total']; ?></td>
-                    </tr>
-                  </tbody>
-                </table>
+        <div id="wrap">
+            <h1 class="text-center">Assignments</h1>
+            <div id="left_col">
+                <p>Total Approved:</p>
+                <p>Total Pending:</p>
+                <p>Total Rejected:</p>
+
+            </div>
+            <div id="right_col">
+                <p><?php echo $accept[0]['total']; ?></p>
+                <p><?php echo $pending[0]['total']; ?></p>
+                <p><?php echo $reject[0]['total']; ?></p>
             </div>
         </div>
-    </div>
-    <div class="row">
-            <div class="col-md-offset-1 col-md-10 white-bg">
-              <div class="table-responsive">
-                <h1 class="text-center">Earnings</h1>
-                <table id="data-table" class="table table-bordered">
-                  <thead>
-                    <tr>
-                        <th>Total Earning</th>
-                        <th>Earning Receivable</th>
-                        <th>Earning Lost</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                        <td><a style="color:blue;" href="<?php echo site_url('MysteryShopperLoggedin/mystery_shopper_assignment_detail/'.$user_id) ?>"><?php echo $amount[0]['total_amount']; ?></a></td>
-                        <td><?php echo $payable_amount[0]['total_amount']; ?></td>
-                        <td><?php echo $reject_amount[0]['total_amount'];?></td>
-                    </tr>
-                  </tbody>
-                </table>
+        <br/>
+        <div id="wrap">
+            <h1 class="text-center">Earnings</h1>
+            <div id="left_col">
+                <p >Total Earning:</p>
+                <p>Earning Receivable:</p>
+                <p>Earning Lost:</p>
+            </div>
+            <div id="right_col">
+                <p><a style="color:blue;" href="<?php echo site_url('MysteryShopperLoggedin/mystery_shopper_assignment_detail/'.$user_id) ?>"><?php echo $amount[0]['total_amount']; ?></a></p>
+                <p><?php echo $payable_amount[0]['total_amount']; ?></p>
+                <p><?php echo $reject_amount[0]['total_amount'];?></p>
             </div>
         </div>
+
     </div>
 </div>
-    </div>
+</div>
+

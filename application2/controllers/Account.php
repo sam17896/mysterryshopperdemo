@@ -13,6 +13,50 @@
 
 		}
 
+
+        public function Bank(){
+            if($this->session->userdata('username')  && $this->session->userdata('type') == 'ADMIN')
+            {
+
+                $data1['total_client']=$this->Accounts->getTotalFromClient()->total * .3  + $this->Accounts->getTotalFromClient()->total;
+                $data1['total_shopper']=$this->Accounts->getTotalFromClient()->total;
+
+
+                $data['user']= $this->session->userdata('username');
+                $this->load->view("Header",$data);
+                $this->load->view("Bank",$data1);
+                $this->load->view("Footer");
+
+             }
+
+             else
+             {
+                $this->load->view("login");
+             }
+
+        }
+
+        public function Tax(){
+            if($this->session->userdata('username')  && $this->session->userdata('type') == 'ADMIN')
+            {
+
+                $data1['all_client_assignment'] = $this->Accounts->getAllClientAssignment();
+                $data['user']= $this->session->userdata('username');
+                $this->load->view("Header",$data);
+                $this->load->view("Tax",$data1);
+                $this->load->view("Footer");
+
+             }
+
+             else
+             {
+                $this->load->view("login");
+             }
+
+        }
+
+
+
     public function Clients(){
         if($this->session->userdata('username')  && $this->session->userdata('type') == 'ADMIN')
         {

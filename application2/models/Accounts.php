@@ -84,6 +84,27 @@ Class Accounts extends CI_Model {
         $result= $query->result_array();
         return $result;
     }
+
+
+    function getTotalFromClient(){
+        $date = date("Y-m-d");
+        $month = date('m');
+        $query = $this->db->query("SELECT sum(shopper_assignment.budget) as total FROM `shopper_assignment` where status ='Closed' and Month(date) = $month");
+        $result= $query->row();
+        return $result;
+    }
+
+    function getAllClientAssignment(){
+        $Mdate= date('Y-m-d', strtotime('+1 month'));
+        $monthNum=substr($Mdate,5,2);
+        $year=subStr($Mdate,0,4);
+        $dateObj   = DateTime::createFromFormat('!m', $monthNum);
+        $monthName = $dateObj->format('F');
+        $queryParam = $monthName.$year;
+        $query = $this->db->query("SELECT * FROM `client_assignment` where month = '$queryParam'");
+        $result= $query->result_array();
+        return $result;
+    }
 }
 
 
