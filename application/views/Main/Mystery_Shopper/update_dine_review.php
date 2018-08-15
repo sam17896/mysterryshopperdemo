@@ -44,12 +44,12 @@
                     <div class="col-md-12" >
              
               <dt ><span style="color: red">* </span>Number of Customers in store</dt>
-                <input class="form-control" type="text"  name="noCustomer" value="<?php echo $selected_assignment['no_customer'];?>" required>
+                <input class="form-control txtboxToFilter" type="text"  name="noCustomer" value="<?php echo $selected_assignment['no_customer'];?>" required>
               </div>
               <div class="col-md-12" >
              
 		<dt ><span style="color: red">* </span>Number of Staff (visible) in store</dt>
-                <input class="form-control" type="text"  name="noStaff" value="<?php echo $selected_assignment['no_staff'];?>" required>
+                <input class="form-control txtboxToFilter" type="text"  name="noStaff" value="<?php echo $selected_assignment['no_staff'];?>" required>
               </div> 
               <div class="col-md-12" >
               <label>Server/Care Taker Name (optional field)</label>
@@ -165,12 +165,12 @@ and feel of the place.</dt>
 
                     </dl>
                     <textarea onKeyDown="limitText(this.form.service,this.form.countdown,5000);"   
-onKeyUp="limitText(this.form.service,this.form.countdown,5000);" class="form-control" data-limitService="3000"  name="service" rows="4" value="<?php echo set_value('service');?>" required><?php echo $selected_assignment['service'];?></textarea>
+onKeyUp="limitText(this.form.service,this.form.countdown,5000);" class="form-control" data-limitService="3000" id="service" name="service" rows="4" value="<?php echo set_value('service');?>" required><?php echo $selected_assignment['service'];?></textarea>
 <div class="col-md-4">
 <font size="1">(Minimum characters: 200,Max: 300) characters Left</font>
 </div><br>
 <div class="col-md-1" style="margin-left: 20px;">
-<font size="1"><input readonly type="text" name="countdown" size="3" value="0"></font>
+<font size="1"><input readonly type="text" name="countdown" size="3" value="0" id="serviceCount"></font>
 </div>
                  <span class="text-danger"><?php echo form_error('service'); ?></span>
               </div>
@@ -192,12 +192,12 @@ appreciate. </dd></p>
 
                     </dl>
                     <textarea onKeyDown="limitText(this.form.food,this.form.countdownfood,5000);"   
-onKeyUp="limitText(this.form.food,this.form.countdownfood,5000);"  class="form-control"   name="food" rows="4" value="<?php echo set_value('food');?>" required><?php echo $selected_assignment['food'];?></textarea>
+onKeyUp="limitText(this.form.food,this.form.countdownfood,5000);"  class="form-control"   name="food" id="food" rows="4" value="<?php echo set_value('food');?>" required><?php echo $selected_assignment['food'];?></textarea>
                 <div class="col-md-4">
 <font size="1">(Minimum characters: 200,Max: 300) characters Left</font>
 </div><br>
 <div class="col-md-1" style="margin-left: 20px;">
-<font size="1"><input readonly type="text" name="countdownfood" size="3" value="0"></font>
+<font size="1"><input readonly type="text" name="countdownfood" size="3" value="0" id="foodCount"></font>
 </div>
  <span class="text-danger"><?php echo form_error('food'); ?></span>
               </div>
@@ -210,14 +210,14 @@ onKeyUp="limitText(this.form.food,this.form.countdownfood,5000);"  class="form-c
                     {
 
                     ?>
-                   <input class="form-control" type="file" value=""  name="image3"  required>
+                   <input class="form-control" type="file" onchange="fileChanged(event)" onclick="fileClicked(event)" value=""  name="image3"  required style="height:0% !important">
                     <?php 
                     } 
                     else
                     {
 
                     ?>
-                   <input class="form-control" type="file" value=""  name="image3"  >
+                   <input class="form-control" type="file" onchange="fileChanged(event)" onclick="fileClicked(event)" value=""  name="image3"  style="height:0% !important">
                     <?php } ?>   
                  
                    </div>
@@ -248,9 +248,13 @@ apologetic? </dd></p>
                     
                     <p><dd>v. Was the complained item charged or new one. </dd></p>
                     <p><dd>vi. Any other comments you deem fit. </dd></p>
-                    <textarea   
+                    <textarea onKeyDown="limitText(this.form.Complaints,this.form.countdownComplaints,5000);"   
+onKeyUp="limitText(this.form.Complaints,this.form.countdownComplaints,5000);"   
  class="form-control" type="textarea" id="complain-text"  name="Complaints" rows="4"  autocomplete='street-address'><?php echo $selected_assignment['complaints'];?></textarea>
-        
+        <font size="1">(Minimum characters: 200) characters Left</font>
+ <br>
+<div class="col-md-1" style="margin-left: 20px;">
+<font size="1"><input readonly type="text" name="countdownComplaints" size="4" value="0" id="complaintsCount"></font>
       </div>
               
               </div>
@@ -329,14 +333,14 @@ and manager. </dd></p>
                     {
 
                     ?>
-                   <input class="form-control" type="file" value=""  name="image2"  required>
+                   <input class="form-control" type="file" value="" onchange="fileChanged(event)" onclick="fileClicked(event)"  name="image2"  required style="height:0% !important">
                     <?php 
                     } 
                     else
                     {
 
                     ?>
-                   <input class="form-control" type="file" value=""  name="image2"  >
+                   <input class="form-control" type="file" value=""  name="image2" onchange="fileChanged(event)" onclick="fileClicked(event)"  style="height:0% !important">
                     <?php } ?>  
                  
                    </div>
@@ -401,14 +405,14 @@ and manager. </dd></p>
                     {
 
                     ?>
-                   <input class="form-control" type="file" value=""  name="image1"  required>
+                   <input class="form-control" type="file" onchange="fileChanged(event)" onclick="fileClicked(event)" value=""  name="image1"  required style="height:0% !important">
                     <?php 
                     } 
                     else
                     {
 
                     ?>
-                   <input class="form-control" type="file" value=""  name="image1"  >
+                   <input class="form-control" type="file" onchange="fileChanged(event)" onclick="fileClicked(event)" value=""  name="image1" style="height:0% !important" >
                     <?php } ?>
                    </div>
               </div>
@@ -419,7 +423,7 @@ and manager. </dd></p>
                
                    <label>Extra</label>
                    <img id="blah" style="width:150px;height:200px;" alt="Image" src="<?php echo base_url("uploads/".$selected_assignment['image4'])?>">
-                   <input class="form-control" type="file"  name="image4"  value="test.png">
+                   <input class="form-control" type="file" onchange="fileChanged(event)" onclick="fileClicked(event)"  name="image4"  value="" style="height:0% !important">
                  
                    </div>
                    </div>
@@ -429,7 +433,7 @@ and manager. </dd></p>
                
                     <label>Extra</label>
                     <img id="blah" style="width:150px;height:200px;" alt="Image" src="<?php echo base_url("uploads/".$selected_assignment['image5'])?>">
-                   <input class="form-control" type="file"  name="image5"  >
+                   <input class="form-control" type="file" onchange="fileChanged(event)" onclick="fileClicked(event)" name="image5"  style="height:0% !important">
                  </div>
                  </div>
                    
@@ -477,6 +481,48 @@ function readURL(input) {
     }
     
     $(document).ready(function () {
+     
+     	var ServiceTxtVal = $('#service').val();
+ 	 var serviceWords = ServiceTxtVal.length;
+  	$('#serviceCount').val(serviceWords);
+  	 var foodTxtVal = $('#food').val();
+	  var foodWords = foodTxtVal.length;
+	   $('#foodCount').val(foodWords);
+	   var complaintstxt = $('#complain-text').val();
+ var complaintsWords = complaintstxt.length;
+  $('#complaintsCount').val(complaintsWords);
+     
+     $(".submitBtn").click(function() {
+  	 var ServiceTxtVal = $('#service').val();
+ 	 var serviceWords = ServiceTxtVal.length;
+  	$('#serviceCount').val(serviceWords);
+  
+  
+  
+	  var foodTxtVal = $('#food').val();
+	  var foodWords = foodTxtVal.length;
+	   $('#foodCount').val(foodWords);
+  
+
+	  if(Number(foodWords) < Number(200)){
+	  $('#myModal').modal('show');
+         	$('#messageBox').text("In Food character length is less than 200 ");
+	 
+	 
+	 	 return false
+	  
+	  }
+	  
+	  if(Number(serviceWords) < Number(200)){
+	  $('#myModal').modal('show');
+         	$('#messageBox').text("In Service character length is less than 200 ");
+	       
+	 	return false
+	  
+	  }
+   });
+     
+     
      
      
     

@@ -126,7 +126,7 @@ class MysteryShopper extends CI_Controller
         }else{
 
                 $config['upload_path']          = './uploads/';
-                $config['allowed_types']        = 'gif|jpg|jpeg|png|pdf|doc|mp4';
+                $config['allowed_types']        = 'gif|jpg|jpeg|png';
                 $config['max_size']             = 102400;
                 
 
@@ -134,14 +134,15 @@ class MysteryShopper extends CI_Controller
                  $image_path ='';
                  $video_path ='';
 
-                if ( ! $this->upload->do_upload('pic'))
+                if (!$this->upload->do_upload('pic'))
                 {
                         
                     $this->form_validation->set_error_delimiters('<p class="error">', '</p>');
 
                     $error = array('error' => $this->upload->display_errors());
+                   
 
-                    //print_r($error);
+                     
                 }
                 else
                 {
@@ -157,7 +158,8 @@ class MysteryShopper extends CI_Controller
                     $this->form_validation->set_error_delimiters('<p class="error">', '</p>');
 
                     $error = array('error' => $this->upload->display_errors());
-
+                    
+                    
                    // print_r($error);
                 }
                 else
@@ -169,12 +171,20 @@ class MysteryShopper extends CI_Controller
                 }
                
                $checkUserEmail = $this->User_model->checkUserExist($this->input->post('mystery_shopper_email'))->user_email;
-               echo $checkUserEmail;
+              // echo $checkUserEmail;
                
                if($checkUserEmail==$this->input->post('mystery_shopper_email')){
                
                $this->session->set_flashdata('error','User already existed');	
-					redirect(base_url().'index.php/MysteryShopper/add_mystery_shopper_view');
+				
+			            $data['user']= $this->session->userdata('username');
+			            $this->load->view("Header",$data);
+			            $this->load->view("addMysteryShopperView"); 
+			            $this->load->view("Footer");
+			          
+			          return false;
+			        
+			       
                
                }else{
                
@@ -273,7 +283,7 @@ class MysteryShopper extends CI_Controller
         echo "User_ID".$userID;
 
                 $config['upload_path']          = './uploads/';
-                $config['allowed_types']        = 'gif|jpg|jpeg|png|pdf|doc|mp4';
+                $config['allowed_types']        = 'gif|jpg|jpeg|png';
                 $config['max_size']             = 102400;
                 
 
@@ -286,7 +296,7 @@ class MysteryShopper extends CI_Controller
 
                     $error = array('error' => $this->upload->display_errors());
 
-                    print_r($error);
+                  
                 }
                 else
                 {
@@ -302,7 +312,7 @@ class MysteryShopper extends CI_Controller
 
                     $error = array('error' => $this->upload->display_errors());
 
-                    print_r($error);
+                   // print_r($error);
                 }
                 else
                 {
@@ -329,7 +339,7 @@ class MysteryShopper extends CI_Controller
         }
         else{
              unlink("uploads/".$data_through_id->mysteryShopper_profile_image);
-             unlink("uploads/".$data_through_id->mysteryShopper_video);
+            // unlink("uploads/".$data_through_id->mysteryShopper_video);
 
             $shopperData = array(
             'mysteryShopper_name' => $this->input->post('mystery_shopper_name'),
@@ -339,7 +349,7 @@ class MysteryShopper extends CI_Controller
             'mysteryShopper_address' => $this->input->post('mystery_shopper_address'),
             'mysteryShopper_email' => $this->input->post('mystery_shopper_email'),
             'mysteryShopper_account_no' => $this->input->post('mystery_shopper_account_number'),
-            'mysteryShopper_video' =>  $video_path,
+           // 'mysteryShopper_video' =>  $video_path,
             'mysteryShopper_contact_number' => $this->input->post('mystery_shopper_contact_number'),
             'mysteryShopper_profile_image' =>  $image_path,
             

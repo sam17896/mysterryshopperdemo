@@ -1,5 +1,4 @@
 
-
     <div class="main">
 
     <style>
@@ -75,13 +74,17 @@
                                             
                                                             $base_path = base_url("uploads/");
                                                   $image_name = $value['mysteryShopper_client_image'];
+                                                  if($image_name =='' || $image_name== null)
+                                                  {
+                                                  $image_name ='no_image.jpeg';
+                                                  }
                                                   $image_path = $base_path.$image_name;
                                                                 ?>
                                     <div class="chosen-missed-out margin-left">
                                         <div class="siteImgContainer">
                                             <?php  $id=$value['mysteryShopper_client_id'];?>
                                             <a href="<?php echo site_url('ClientLoggedin/store_assignments/'.$id.'/mystery/212005151015') ?>" rel="nofollow">
-                                                <img alt="Get A FREE £100 B&amp;Q Voucher!" class="siteImg" style="width:350px;height:200px;" src="<?php echo $image_path;?>" title="Logo">
+                                                <img alt="" class="siteImg" style="width:350px;height:200px;" src="<?php echo $image_path;?>" title="Logo">
                                                 <button type="button" class="btn btn-success">View Completed Assignments</button>
                                             </a>
                                         </div>

@@ -34,7 +34,7 @@ Class User_model extends CI_Model {
 	return $result;
 }
 
-
+	
 	function user_added_id()
 	{
 		$maxid = 0;

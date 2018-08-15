@@ -66,6 +66,17 @@ Class client_model extends CI_Model {
 		$result = $query->row();
 		return $result;
 	}
+	
+	function searchnmAssignment($client_id)
+	{
+		$this->db->select('*');
+		$this->db->from('mysteryShopper_assignment');
+		$this->db->where('mysteryShopper_client_id', $client_id);
+		$query = $this->db->get();
+		$result = $query->result_array();
+		return $result;
+	}
+
 
 	function getdetail($client_name)
 	{

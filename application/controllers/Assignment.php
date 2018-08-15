@@ -134,10 +134,10 @@
 
             $config = array();
             $config['protocol'] = 'mail';
-            $config['smtp_host'] = 'ssl://smtp.mysteryshopperspakistan.com';
+            $config['smtp_host'] = 'ssl://smtp.outlook.office365.com';
             $config['smtp_port'] = '465';
             $config['smtp_user'] = 'info@mysteryshopperspakistan.com';
-            $config['smtp_pass'] = 'omgomgsk';
+            $config['smtp_pass'] = 'OMG098)(*';
             $config['mailtype'] = 'html';
             $config['charset'] = 'utf-8';
             $config['wordwrap'] = TRUE;
@@ -440,11 +440,20 @@ $this->load->view("Main/Footer");
       {
          
         $id = urldecode($this->uri->segment(3));
-        $this->Assignment_model->del($id);
-        redirect('/assignment') ;
+         $mysteryShopper_assignment_status = $this->Assignment_model->searchnm($id)->mysteryShopper_assignment_status;
+         
+         if($mysteryShopper_assignment_status=='Working' || $mysteryShopper_assignment_status=='Completed' || $mysteryShopper_assignment_status=='Accept'){
+         
+          echo '<script>alert("You can not delete this assignment because assginment has been taken by My steryShopper"); window.location.href = window.location.origin+"/index.php/assignment"</script>';
+           return false;
+       
+         }else{
+          $this->Assignment_model->del($id);
+          redirect('/assignment') ;
          }
           
-            else
+            
+            }else
             {
              $this->load->view("login");
             }

@@ -31,6 +31,7 @@
                 <tr>
                   
                   <th>Client Name</th>
+                  <th>City</th>
                   <th>Start From</th>
                   <th>Valid Till</th>
                   <th>Status</th>
@@ -54,6 +55,7 @@
                                             ?>
                                           <tr align="center">
                                             <td><?php echo $value1['mysteryShopper_client_name']; ?> - <?php echo $value1['mysteryShopper_client_owner_name']; ?></td>
+                                            <td><?php echo $value['mysteryShopper_assignment_city'];?></td>
                                             <td><?php echo date("d/m/Y", strtotime($value['mysteryShopper_assignment_fromDate']));?></td>
                                             <td><?php echo date("d/m/Y", strtotime($value['mysteryShopper_assignment_toDate'])); ?></td>
                                             <td><?php echo $value['mysteryShopper_assignment_status']; ?></td>

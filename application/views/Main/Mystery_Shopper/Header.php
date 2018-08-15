@@ -87,6 +87,8 @@ border-radius: 10px;
 	<script type='text/javascript' src='<?php echo base_url(); ?>Main/wp-content/cache/busting/1/wp-includes/js/jquery/jquery-1.12.4.js'></script>
     	<script src="<?php echo base_url(); ?>Main/wp-content/cache/min/1/38e7ad9bd856d1729b0aed6fcd4a46b6.js" ></script>
 
+
+
 </head>
 
 
@@ -132,12 +134,57 @@ border-radius: 10px;
     <!--/.container-fluid -->
   </nav>
 
+ <div class="modal fade " id="sessionmodal" role="dialog">
+    <div class="modal-dialog">
 
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
 
+        </div>
+       <center> <div class="modal-body">
+          <p style="color:red" id="">Session Expired, Login Again To Continue.</p>
 
+        </div></center>
+        <center><div style="padding: 15px;
 
+    border-top: 1px solid #e5e5e5;" >
+          <a class="btn btn-info btn-lg" href="https://www.mysteryshopperspakistan.com/index.php/Main/logout"  data-dismiss="modal">OK</a>
 
+        </div></center>
+      </div>
 
+    </div>
+  </div>
+
+  <div class="modal fade " id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+       <center> <div class="modal-body">
+          <p style="color:red" id="messageBox"></p>
+
+        </div></center>
+        <center><div style="padding: 15px;
+
+    border-top: 1px solid #e5e5e5;" >
+          <a class="btn btn-info btn-lg"  data-dismiss="modal">OK</a>
+
+        </div></center>
+      </div>
+
+    </div>
+  </div>
+
+<script src="<?php echo base_url(); ?>Main/wp-content/cache/min/1/4a77dfb0541852c845fcedafbc7dd535.js" data-minify="1" ></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 
 
@@ -148,12 +195,15 @@ $( document ).ready(function() {
 
 
     setTimeout(function(){
-        alert("Session Expired, Login Again To Continue.");
+
+     		$('#sessionmodal').modal('show');
+
+       	//alert('Time out');
 
 
-        window.location = "https://www.mysteryshopperspakistan.com/index.php/Main/logout";
+        //window.location = "https://www.mysteryshopperspakistan.com/index.php/Main/logout";
 
-        exit;
+
 
          }, 1200000);
 
@@ -162,6 +212,11 @@ $( document ).ready(function() {
 $( "#menu" ).click(function() {
   document.getElementById('hideLogo').style.display='none';
 });
+
+$('#sessionmodal').on('hidden.bs.modal', function () {
+
+    window.location = "https://www.mysteryshopperspakistan.com/index.php/Main/logout";
+})
 
 
 
@@ -196,7 +251,42 @@ $( "#menu" ).click(function() {
 
 
 </script>
-<script src="<?php echo base_url(); ?>Main/wp-content/cache/min/1/4a77dfb0541852c845fcedafbc7dd535.js" data-minify="1" ></script>
+
+<script>
+
+
+    //This is All Just For Logging:
+    var debug = true;//true: add debug logs when cloning
+    var evenMoreListeners = true;//demonstrat re-attaching javascript Event Listeners (Inline Event Listeners don't need to be re-attached)
+
+
+
+    var clone = {};
+
+    // FileClicked()
+    function fileClicked(event) {
+        var fileElement = event.target;
+        if (fileElement.value != "") {
+
+            clone[fileElement.id] = $(fileElement).clone(); //'Saving Clone'
+        }
+        //What ever else you want to do when File Chooser Clicked
+    }
+
+    // FileChanged()
+    function fileChanged(event) {
+        var fileElement = event.target;
+        if (fileElement.value == "") {
+
+            clone[fileElement.id].insertBefore(fileElement); //'Restoring Clone'
+            $(fileElement).remove(); //'Removing Original'
+            if (evenMoreListeners) { addEventListenersTo(clone[fileElement.id]) }//If Needed Re-attach additional Event Listeners
+        }
+        //What ever else you want to do when File Chooser Changed
+    }
+
+
+    </script>
 
 </body>
 

@@ -15,12 +15,22 @@
         </div>
       </div>
         <div class="card-header">
+        
+            
             <a class="btn btn-success add-client" href="<?php echo site_url('Assignment/add_assignment')?>">Add Assignment</a>
+            
+            
             <a class="btn btn-success add-client" href="<?php echo site_url('Assignment/pending_assignment')?>">View Pending Assignment</a>
+            
             <a class="btn btn-success add-client" href="<?php echo site_url('Assignment/complete_assignment')?>">View Completed Assignment</a>
+            
             <a class="btn btn-success add-client" href="<?php echo site_url('Assignment/reject_assignment')?>">View Reject Assignment</a>
+            
              <a class="btn btn-success add-client" href="<?php echo site_url('Assignment/accept_assignment')?>">View Accept Assignment</a>
+             
              <a class="btn btn-success add-client" href="<?php echo site_url('Assignment/expired_assignment')?>">View Expired Assignment</a>
+             
+              
         </div>
                         <!-- <h4 class="card-title">Basic example</h4>
                         <h6 class="card-subtitle">DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, and will add advanced interaction controls to any HTML table.</h6> -->

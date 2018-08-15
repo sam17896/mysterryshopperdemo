@@ -1,9 +1,3 @@
-<!-- <link href="<?php echo base_url(); ?>Main/signUpCss/css/style.css" rel="stylesheet" type="text/css" media="all"/> -->
-<!-- <link href="<?php echo base_url(); ?>Main/signUpCss/css/font-awesome.css" rel="stylesheet" type="text/css" media="all"/> -->
-<!-- <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-<script src="<?php echo base_url(); ?>Main/signUpCss/js/jquery-1.11.1.min.js"></script> -->
- 
-<!-- //font-awesome icons -->
 <!--Google Fonts-->
 <style type="text/css">
    div {
@@ -187,7 +181,11 @@ width:100px;height:150px
 /*/**/
        
 </style>
-<div class="container-fluid" style="display: none">
+
+
+
+
+<div class="container-fluid" style="display: none" >
 
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blog-main">
@@ -241,20 +239,24 @@ width:100px;height:150px
                              
                             <span style="color: red;">*</span><span style="color: white;font-size:15px"> Name</span>
                             <input type="text" class="form_control" name="mystery_shopper_name" placeholder="First Name" value="<?php echo set_value('mystery_shopper_name');?>" required="" style="margin-top: 5%">
-                            <span class="text-danger"><?php echo form_error('mystery_shopper_name'); ?></span>
+                            <input type="hidden" id="space" value="<?php echo form_error('mystery_shopper_name'); ?>" >
                    
                             <span style="color: red">* </span><span style="color: white;font-size:15px">Contact Number</span>
-                            <input type="text" name="mystery_shopper_contact_number" placeholder="Contact Number" value="<?php echo set_value('mystery_shopper_contact_number');?>" required="" style="margin-top: 5%">
-                            <span class="text-danger"><?php echo form_error('mystery_shopper_contact_number'); ?></span>
+                            <input type="text" class="txtboxToFilter" name="mystery_shopper_contact_number" maxlength="11" placeholder="Contact Number Ex: 03005255666 " value="<?php echo set_value('mystery_shopper_contact_number');?>" required="" style="margin-top: 5%">
+                             <input type="hidden" id="contact" value="<?php echo form_error('mystery_shopper_contact_number'); ?>" >
+                            
                             
                             <span style="color: red">* </span><span style="color: white;font-size:15px">Email</span>
-                            <input type="email" name="mystery_shopper_email" placeholder="Email" required="" value="<?php echo set_value('mystery_shopper_email');?>" style="margin-top: 5%">
-                            <span class="text-danger"><?php echo form_error('mystery_shopper_email'); ?></span>
+                            <input type="email" name="mystery_shopper_email" placeholder="This will be your username." required="" value="<?php echo set_value('mystery_shopper_email');?>" style="margin-top: 5%">
+                            
+                             <input type="hidden" id="email" value="<?php echo form_error('mystery_shopper_email'); ?>" >
                             
                             <span style="color: red">* </span><span style="color: white;font-size:15px">Password</span>
-                            <input type="password" name="userPassword" placeholder="Confirm Password" required="" value="<?php echo set_value('userPassword');?>" style="margin-top: 5%">
+                            <input type="password" name="userPassword" placeholder="Confirm Password" maxlength="8" required=""  id="userPassword" value="<?php echo set_value('userPassword');?>" style="margin-top: 5%">
                             <span style="font-size:12px;color: white;" >(Max Length 8 Characters)</span><br><br><br>
-                            <span class="text-danger"><?php echo form_error('userPassword'); ?></span><br><br><br><br><br><br><br><br><br><br>
+                             <input type="hidden" id="password" value="<?php echo form_error('userPassword'); ?>" >
+                           
+                            </span><br><br><br><br><br><br><br><br><br><br>
                             <div style="margin-top: 5%;"></div>
                             <span style="color: red;margin-top: -10%">* </span><span style="color: white";font-size:15px>City</span>
                <select name="mystery_shopper_address" id="mystery_shopper_address"  required style="margin-top: 5%">
@@ -560,10 +562,12 @@ width:100px;height:150px
                                                         <option class="option" value="Zhob">Zhob</option>
                                                         <option class="option" value="Other">Other</option>                                       
                                                         </select>
-                                                        <span class="text-danger"><?php echo form_error('mystery_shopper_address'); ?></span>
+                                                         <input type="hidden" id="cat" value="<?php echo form_error('mystery_shopper_address'); ?>" >
+                                                       
+                                                        
 
                                                         <br><br><br><br><br><br>
-                            <center><input type="submit" value="Sign Up"><center>
+                            <center><input type="submit" class="submitBtn" value="Sign Up"><center>
 
                             
                         </form>
@@ -1055,8 +1059,12 @@ width:100px;height:150px
 
                                                                                                           $image_name = $value['mysteryShopper_client_image'];
 
-                                                                                                          $image_path = $base_path.$image_name;
-
+                                                                                                         
+                                                                                                          if($image_name =='' || $image_name== null)
+                                                  							{
+                                                  							$image_name ='no_image.jpeg';
+                                                  							}
+ 												$image_path = $base_path.$image_name;
                                                                                                                 ?>
 
                                                                                                                                            <!--  <li class="hex"> -->
@@ -1332,3 +1340,41 @@ width:100px;height:150px
                         </div>
                     </div>
 </body>
+
+  <div class="modal fade " id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+       <center> <div class="modal-body">
+          <p style="color:red" id="messageBox"></p>
+          
+        </div></center>
+        <center><div style="padding: 15px;
+   
+    border-top: 1px solid #e5e5e5;" >
+          <a class="btn btn-info btn-lg"  data-dismiss="modal">OK</a>
+          
+        </div></center>
+      </div>
+      
+    </div>
+  </div>
+  <script type="text/javascript">
+       
+    
+    var check = function() {
+  if (document.getElementById('userPassword').value < Number(6)) {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'Password length is less than 6';
+  }
+  else{
+  
+  } 
+}
+    </script>
+ 

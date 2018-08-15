@@ -28,13 +28,15 @@
         <script src="<?php echo base_url(); ?>vendors/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
         <script src="<?php echo base_url(); ?>vendors/bower_components/jszip/dist/jszip.min.js"></script>
         <script src="<?php echo base_url(); ?>vendors/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        
 
         <!-- App functions and actions -->
-        <script src="<?php echo base_url(); ?>js/app.min.js"></script>
+        <!-- <script src="<?php echo base_url(); ?>js/app.min.js"></script> -->
      
 
 <script>
 $(document).ready(function() {
+
     $(".txtboxToFilter").keydown(function (e) {
         // Allow: backspace, delete, tab, escape, enter and .
         if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
@@ -56,16 +58,8 @@ $(document).ready(function() {
     });
 });
 //date ka haar aik ka alag function bnega.
-function TDate() {
-    var UserDate = document.getElementById("userdate").value;
-    var ToDate = new Date();
 
-    if (new Date(UserDate).getTime() < ToDate.getTime()) {
-          alert("The Date must be Bigger or Equal to today date");
-          return false;
-     }
-    return true;
-}
+
 
 </script>
         <!-- Older IE warning message -->

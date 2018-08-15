@@ -137,17 +137,17 @@
                                         <?php }
                                               else{
                                          ?>
-                                         <div data-toggle="modal" data-target="#myModal" id="emailsignupbtn" class="signupBtn" style="padding: 13.5px;">
+                                         <div data-toggle="modal" data-target="#nic_modal" id="emailsignupbtn" class="signupBtn" style="padding: 13.5px;">
                                         
                                             GET ASSIGNMENT
                                         </div>
                                         
                                           <!-- Modal -->
-  					<div class="modal fade" id="myModal" role="dialog">
+  					<div class="modal fade" id="nic_modal" role="dialog">
     						<div class="modal-dialog">
     
      							 <!-- Modal content-->
-     							 <form  method="post" action="<?php echo site_url('MysteryShopperWeb/mysteryShopperContact_NIC_update') ?>">
+     							 <form  method="post" action="<?php echo site_url('MysteryShopperWeb/mysteryShopperContact_NIC_update') ?>" onsubmit="return validateMyForm();" >
       							<div class="modal-content">
         							<div class="modal-header" style="background-color:#101010;">
           								<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -159,17 +159,17 @@
         							  <p style="color:black;" >Enter the contact no on which your amount is to be transfered.</p>	
           								
           								<h5 style="color:black; margin-top: 0px !important; float:left;">NIC</h5><br>
-          								<input style="width:100%" name="mystery_shopper_nic_number" type="text" value="<?php echo $shopperCity->mysteryShopper_nic;?>" placeholder="Enter NIC Number" required>
+          								<input style="width:100%" id="nic" value="<?php echo $shopperCity->mysteryShopper_nic;?>" data-mask="_____-_______-_" name="mystery_shopper_nic_number" type="text" value="<?php echo $shopperCity->mysteryShopper_nic;?>" placeholder="Enter NIC Number" required>
           								
           								<h5 style="color:black; margin-top: 10px !important; float:left;">Account Contact</h5>
-          								<input style="width:100%" name="account_contact"  type="text" placeholder="Enter Account Contact No" required>
+          								<input style="width:100%" id="contact" value="____-_______" data-mask="____-_______" name="account_contact"  type="text" placeholder="Enter Account Contact No" required>
           								
           								<input type="hidden" name="assignment_id" value="<?php echo urldecode($this->uri->segment(3)) ?>" >
         							  	<input type="hidden" name="user_id" value="<?php echo $shopperCity->mysteryShopper_id ?>" >
           							  
         							</div>
         							<div class="modal-footer" style="background-color:#101010;">
-          							<button type="submit" class="btn-secondary" style="    padding-bottom: 2px;padding-top: 2px;">Update</button>
+          							<button type="submit" class="btn-secondary"  style="padding-bottom: 2px;padding-top: 2px;">Update</button>
           							
         							</div>
         							
@@ -253,3 +253,85 @@
     </div>
     
     </div>
+    <script>
+    function validateMyForm()
+    {
+
+
+
+	
+	var nic  = $('#nic').val();
+	var contact  = $('#contact').val();
+	
+	var idToTest = '12345-1234567-1';
+	myRegExp = new RegExp(/\d{5}-\d{7}-\d/);
+
+	if(myRegExp.test(nic)) 
+	{
+	  	if (contact.includes("_"))
+		{
+	  		alert("Invalid Contact Format.");
+	  		return false;
+		}
+		else
+		{
+	    		return true;
+	    	}
+	}
+	else 
+	{
+		alert('Invalid nic Format. Format Accepted 12345-1234567-1');
+	    	return false;
+	}
+	
+
+	
+	
+	
+	
+	
+
+
+
+}
+
+Array.prototype.forEach.call(document.body.querySelectorAll("*[data-mask]"), applyDataMask);
+
+function applyDataMask(field) {
+    var mask = field.dataset.mask.split('');
+    
+    // For now, this just strips everything that's not a number
+    function stripMask(maskedData) {
+        function isDigit(char) {
+            return /\d/.test(char);
+        }
+        return maskedData.split('').filter(isDigit);
+    }
+    
+    // Replace `_` characters with characters from `data`
+    function applyMask(data) {
+        return mask.map(function(char) {
+            if (char != '_') return char;
+            if (data.length == 0) return char;
+            return data.shift();
+        }).join('')
+    }
+    
+    function reapplyMask(data) {
+        return applyMask(stripMask(data));
+    }
+    
+    function changed() {   
+        var oldStart = field.selectionStart;
+        var oldEnd = field.selectionEnd;
+        
+        field.value = reapplyMask(field.value);
+        
+        field.selectionStart = oldStart;
+        field.selectionEnd = oldEnd;
+    }
+    
+    field.addEventListener('click', changed)
+    field.addEventListener('keyup', changed)
+}
+    </script>

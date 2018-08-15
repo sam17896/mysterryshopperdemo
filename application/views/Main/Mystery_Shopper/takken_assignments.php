@@ -86,17 +86,25 @@
                                             <?php  $id=$value['mysteryShopper_assignment_id'];
                                             if($value['mysteryShopper_assignment_category']=="Dine"){
                                             ?>
-                                            <a href="<?php echo site_url('MysteryShopperLoggedin/upload_review/'.$id) ?>" rel="nofollow">
-                                                <img alt="Get A FREE £100 B&amp;Q Voucher!" class="siteImg" style="width:350px;height:200px;" src="<?php echo $image_path;?>" title="">
-                                                <center><span>Dine</span></center>
+                                            <a style="color: black;" href="<?php echo site_url('MysteryShopperLoggedin/upload_review/'.$id) ?>" rel="nofollow">
+                                                <img alt="" class="siteImg" style="width:350px;height:200px;" src="<?php echo $image_path;?>" title="">
+                                                 <center >Category: <span style="font-weight: normal;">Dine</span><br>
+                                                Budget: <span style="font-weight: normal;"><?php echo $value['assignment_budget']; ?></span><br>
+                                                location: <span style="font-weight: normal;"><?php echo $value1['mysteryShopper_client_address'];?></span><br>
+                                                 Date: <span style="font-weight: normal;"><?php echo $value['mysteryShopper_assignment_fromDate'];?></span>
+                                                </center>
                                                 <button type="button" class="btn btn-success">Upload Review</button>
                                             </a>
                                             <?php }
                                             elseif($value['mysteryShopper_assignment_category']=="Delivery"){
                                             ?>
-                                            <a href="<?php echo site_url('MysteryShopperLoggedin/delivery_upload_review/'.$id) ?>" rel="nofollow">
-                                                <img alt="Get A FREE £100 B&amp;Q Voucher!" class="siteImg" style="width:350px;height:200px;" src="<?php echo $image_path;?>" title="">
-                                                <center><span>Delivery</span></center>
+                                            <a style="color: black;" href="<?php echo site_url('MysteryShopperLoggedin/delivery_upload_review/'.$id) ?>" rel="nofollow">
+                                                <img alt="" class="siteImg" style="width:350px;height:200px;" src="<?php echo $image_path;?>" title="">
+                                                <center>Category: <span style="font-weight: normal;">Dine</span><br>
+                                                Budget: <span style="font-weight: normal;"><?php echo $value['assignment_budget']; ?></span><br>
+                                                location: <span style="font-weight: normal;"><?php echo $value1['mysteryShopper_client_address'];?></span><br>
+                                                Date: <span style="font-weight: normal;"><?php echo $value['mysteryShopper_assignment_fromDate'];?></span>
+                                                </center>
                                                 <button type="button" class="btn btn-success">Upload Review</button>
                                             </a>
                                             <?php

@@ -949,7 +949,32 @@ public function allClient_get(){
 
 		}
 	}
-
+	public function all_pending_get(){
+		try{
+			$data = $this->Assignment_model->get_all_pending();
+			//$user_id = $this->input->post('mystery_shopper_id');
+			 
+                                    
+		//$this->User_model->update($user_id,$takenAssignment);	
+		
+			$length = count($data);
+			$this->response(
+						array(
+							"status"=>true,
+							"data"=>$data,
+							"length"=>$length	
+						),200
+					);
+		}catch (Exception $e){
+			$this->response(
+						array(
+							"status"=>false,
+							"error"=>$e->getMessage(),
+							"length"=>0
+						),400
+					);
+		}
+	}
 	public function takken_pending_assignments_get($id){
 		try{
 			$data = $this->Assignment_model->user_pending_assignments($id);

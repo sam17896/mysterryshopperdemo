@@ -19,7 +19,7 @@
           <div class="col-md-6">
           
               <label>Valid From</label>
-                <input class="form-control" value="<?php echo $selected_assignment->mysteryShopper_assignment_fromDate; ?>" type="date" name="from_date" >      
+                <input class="form-control" value="<?php echo $selected_assignment->mysteryShopper_assignment_fromDate; ?>" id="userdate" onchange="TDate()" type="date" name="from_date" >      
             </div>
             <div class="col-md-6">
               <label>Valid Till</label>
@@ -64,7 +64,7 @@
             <div class="form-row">
                <div class="col-md-6">
                 <label>Status</label>
-                <select class="form-control"   name="avaiability">
+                <select class="form-control" style="color:#16354e ;font-weight:bold;font-size:15px"   name="avaiability">
                    <option >Open</option>
                   <option >Working</option>
                   <option >Expired</option>
@@ -85,7 +85,7 @@
             <div class="form-row">
 		<div class="col-md-6">
                 <label>Assigment City</label>
-                <select name="assignment_city" required>
+                <select name="assignment_city" style="color:#16354e ;font-weight:bold;font-size:15px" required>
                   <option selected="true" ><?php echo $selected_assignment->mysteryShopper_assignment_city; ?></option>
                                                         <option class="option" value="Abbottabad">Abbottabad</option>
                                                         <option class="option" value="Adezai">Adezai</option>
@@ -391,6 +391,18 @@
               </div>
                </div>
           </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6 form-group">
+                <label>Assigment Category</label>
+                <select class="form-control" name="assignment_category" style="color:#16354e ;font-weight:bold;font-size:15px" required>
+                 <option selected="true" ><?php echo $selected_assignment-> mysteryShopper_assignment_category; ?></option>
+                  <option>Dine</option>
+                  <option>Delivery</option>
+               </select>
+              </div>
+           </div>
+    </div>
 
           <input class="btn btn-success btn-block" type="submit" name="submit">
         </form>

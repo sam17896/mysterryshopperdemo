@@ -59,8 +59,10 @@ class MysteryShopperWeb extends CI_Controller
                 $video_path='';
         
                 $config['upload_path']          = './uploads/';
-                $config['allowed_types']        = 'gif|jpg|jpeg|png|pdf|doc|mp4';
+                $config['allowed_types']        = 'gif|jpg|jpeg|png';
                 $config['max_size']             = 102400;
+                
+                
                 
 
                 $this->load->library('upload', $config);
@@ -71,8 +73,10 @@ class MysteryShopperWeb extends CI_Controller
                     $this->form_validation->set_error_delimiters('<p class="error">', '</p>');
 
                     $error = array('error' => $this->upload->display_errors());
+                    
 
-                    print_r($error);
+                    $this->session->set_flashdata('error','Invalid file extension use only these image extention  gif|jpg|jpeg|png');	
+					redirect(base_url().'index.php/MysteryShopperWeb/mysteryShopperProfileUpdateView');
                 }
                 else
                 {
@@ -168,6 +172,7 @@ class MysteryShopperWeb extends CI_Controller
 
           //close cURL resource
           curl_close($ch);
+          
       }
       
       public function mysteryShopperContact_NIC_update()
@@ -215,7 +220,7 @@ class MysteryShopperWeb extends CI_Controller
           $result = curl_exec($ch);
           $result = json_decode($result,true);
            $id = $this->input->post('assignment_id');
-          redirect(base_url().'index.php/MysteryShopperLoggedin/assignment_detail/'.$id);
+          redirect(base_url().'index.php/MysteryShopperLoggedin/get_assignment/'.$id);
           print_r($result);
 
           //close cURL resource

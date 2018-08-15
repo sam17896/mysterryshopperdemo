@@ -76,9 +76,7 @@
          
          else
          {
-          $this->load->view("Main/Header");
-           $this->load->view("Main/Login");
-          $this->load->view("Main/Footer");
+         	redirect('https://www.mysteryshopperspakistan.com/index.php/Main/logout');
          }  	
       }
 
@@ -139,9 +137,9 @@
         }
          else
          {
-          $this->load->view("Main/Header");
+          $this->load->view("Main/Header2");
           $this->load->view("Main/Login");
-          $this->load->view("Main/Footer");
+          $this->load->view("Main/Footer2");
          }
       }
         

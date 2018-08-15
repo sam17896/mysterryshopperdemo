@@ -189,6 +189,12 @@
          
           if($value['user_email'] == $email && $value['user_type'] =='MYSTERYSHOPPER' )
           {
+          $data23 = array(
+          'pass_reset_status' => '1',
+          
+          
+        );
+           $this->User_model->update($value['user_id'],$data23 );
              //$this->load->library('encrypt');
 			//echo 'AAAAAAAAAAAAAA';
             $name = $this->input->post('contactUs_name');
@@ -207,10 +213,10 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
 
             $config = array();
             $config['protocol'] = 'mail';
-            $config['smtp_host'] = 'ssl://smtp.mysteryshopperspakistan.com';
+            $config['smtp_host'] = 'ssl://smtp.outlook.office365.com';
             $config['smtp_port'] = '465';
             $config['smtp_user'] = 'info@mysteryshopperspakistan.com';
-            $config['smtp_pass'] = 'omgomgsk';
+            $config['smtp_pass'] = 'OMG098)(*';
             $config['mailtype'] = 'html';
             $config['charset'] = 'utf-8';
             $config['wordwrap'] = TRUE;
@@ -263,7 +269,7 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
       
       public function reset_password_via_email_view()
       {
-        $this->load->view("Main/Header2");
+          $this->load->view("Main/Header2");
           $this->load->view("Main/rest_password.php"); 
           $this->load->view("Main/Footer2");
       }
@@ -272,9 +278,13 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
         $this->load->library('encrypt');
         $user_id= base64_decode($this->input->post('user_id'));
         $user_email = $this->User_model->searchnm($user_id)->user_email;
+        $pass_reset_status = $this->User_model->searchnm($user_id)->pass_reset_status;
         $newPassword = $this->input->post('newPassword');
         $retypePassword = $this->input->post('retypePassword');
+         
         try{
+        if($pass_reset_status=='1')
+        {
         
          if($newPassword==$retypePassword){
 
@@ -291,7 +301,7 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
             $subject = 'Password Updated';
             $userId = base64_encode($user_id);
 
-            $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Your Password Has Been Updated Successfully'.'<br><br>'.'If it Was not you click on below Link'.'<br><br><br>'.'https://www.mysteryshopperspakistan.com/index.php/Web/reset_password_via_email_view/?msp='.$userId.'<br><br>'.'Regards'.'<br>'.'MyStery Shopper Team';
+            $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Your Password Has Been Updated Successfully'.'<br>'.'Regards'.'<br>'.'MyStery Shopper Team';
 
             //set to_email id to which you want to receive mails
             $to_email = $user_email;
@@ -301,10 +311,10 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
 
             $config = array();
             $config['protocol'] = 'mail';
-            $config['smtp_host'] = 'ssl://smtp.mysteryshopperspakistan.com';
+            $config['smtp_host'] = 'ssl://smtp.outlook.office365.com';
             $config['smtp_port'] = '465';
             $config['smtp_user'] = 'info@mysteryshopperspakistan.com';
-            $config['smtp_pass'] = 'omgomgsk';
+            $config['smtp_pass'] = 'OMG098)(*';
             $config['mailtype'] = 'html';
             $config['charset'] = 'utf-8';
             $config['wordwrap'] = TRUE;
@@ -331,7 +341,7 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
             
                         );
                       
-        
+         
         
 
           //create a new cURL resource
@@ -347,11 +357,16 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
 
           $result = curl_exec($ch);
           $result = json_decode($result,true);
+          $data23 = array(
+          'pass_reset_status' => '0',
+        	);
+           $this->User_model->update($user_id,$data23 );
+           
           redirect(base_url().'index.php/Web/login');
          // print_r($result);
           curl_close($ch);
             }else{
-                        
+                     
                      $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Password not matching</div>');  
                      // echo $user_id;
                       redirect(base_url().'index.php/Web/reset_password_via_email_view/'.$user_id);
@@ -361,7 +376,14 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
           //close cURL resource
           //curl_close($ch);
           
-          
+          }
+          else
+          {
+          	//echo '<script>alert("Link hass been expired.")</script>'; 
+          	//redirect(base_url().'index.php/Web/login');
+          	$this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Link hass been expired.</div>'); 
+          	redirect(base_url().'index.php/Web/reset_password_via_email_view/'.$user_id); 
+          }
           
           }
            catch(Exception $e)
@@ -453,6 +475,25 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
       else{
         $this->load->view("Main/Header2");
           $this->load->view("Main/faq"); 
+          $this->load->view("Main/Footer2");}
+      } 
+      public function client_faq()
+      {
+      		  $data['users']= $this->session->userdata('username'); 
+      if($this->session->userdata('type') == 'MYSTERYSHOPPER')
+          {
+        	 redirect('mysteryShopper');
+
+          }
+          elseif($this->session->userdata('type') == 'CLIENT')
+          {
+      
+        	redirect('client');
+
+          }
+      else{
+        $this->load->view("Main/Header2");
+          $this->load->view("Main/client_faq"); 
           $this->load->view("Main/Footer2");}
       } 
       public function about_us()
@@ -564,10 +605,10 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
 
             $config = array();
             $config['protocol'] = 'mail';
-            $config['smtp_host'] = 'ssl://smtp.mysteryshopperspakistan.com';
+            $config['smtp_host'] = 'ssl://smtp.outlook.office365.com';
             $config['smtp_port'] = '465';
             $config['smtp_user'] = 'info@mysteryshopperspakistan.com';
-            $config['smtp_pass'] = 'omgomgsk';
+            $config['smtp_pass'] = 'OMG098)(*';
             $config['mailtype'] = 'html';
             $config['charset'] = 'utf-8';
             $config['wordwrap'] = TRUE;
@@ -732,7 +773,7 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
     {
         if (!preg_match("/^[0-9+]{5}[0-9+]{7}[0-9]{1}$/",$str))
         {
-            $this->form_validation->set_message('nicValidation', 'Use Valid CNIC Pattern 1234512345671');
+            $this->form_validation->set_message('nicValidation', 'Use Valid CNIC Pattern Ex: 1234512345671');
             return FALSE;
         }
         else
@@ -744,7 +785,7 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
     {
         if (!preg_match("/^[0-9+]{4}[0-9+]{7}$/",$str))
         {
-            $this->form_validation->set_message('PhoneValidation', 'Use Valid Phone Pattern 00000000000');
+            $this->form_validation->set_message('PhoneValidation', 'Use Valid Phone Pattern Ex: 03005255666');
             return FALSE;
         }
         else
@@ -775,7 +816,7 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
     */
     if (strlen($password) < 6)
     {
-      $this->form_validation->set_message('valid_password', 'Password have must have at least 6 characters in length.');
+      $this->form_validation->set_message('valid_password', 'Password have must have minimum 6 characters in length.');
       return FALSE;
     }
     if (strlen($password) > 8)
@@ -793,9 +834,10 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
       	//$this->form_validation->set_rules('mystery_shopper_nic_number', 'CNIC Number', 'trim|required|xss_clean|callback_nicValidation');
         $this->form_validation->set_rules('mystery_shopper_email', 'Emaid ID', 'trim|required|valid_email');
         $this->form_validation->set_rules('mystery_shopper_name', 'Shopper Name', 'trim|required|xss_clean|callback_alpha_space_only');
-        //$this->form_validation->set_rules('mystery_shopper_contact_number', 'Contact Number', 'trim|required|xss_clean|callback_PhoneValidation');
+        $this->form_validation->set_rules('mystery_shopper_contact_number', 'Contact Number', 'trim|required|xss_clean|callback_PhoneValidation');
         $this->form_validation->set_rules('userPassword', 'Password', 'trim|required|xss_clean|callback_valid_password');
         $this->form_validation->set_rules('mystery_shopper_address', 'Select City', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('mystery_shopper_email', 'Emaid ID', 'trim|required|valid_email|is_unique[mysteryShopperUsers. user_email]');
 
         // $this->form_validation->set_rules('mystery_shopper_bank_name', ' Name Bank ', 'trim|required|xss_clean');
         // $this->form_validation->set_rules('mystery_shopper_address', 'Address', 'trim|required|xss_clean');
@@ -806,7 +848,7 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
         if ($this->form_validation->run() == FALSE)
         {
             //validation fails
-              //$this->load->view("Main/Header");
+              //$this->load->view("Main/Header2");
               $data['users']= $this->session->userdata('username'); 
       if($this->session->userdata('type') == 'MYSTERYSHOPPER')
           {
@@ -865,7 +907,7 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
           $data['allclient'] = $result['data'];
 
       
-             $this->load->view("Main/Header2");
+           $this->load->view("Main/Header2");
 	   $this->load->view("Main/index",$data); 
 	   $this->load->view("Main/Footer2");
               }
@@ -896,7 +938,7 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
             $to_email = 'info@mysteryshopperspakistan.com';
             
             
-            $Conformationsubject= 'Registration Conformation';
+            $Conformationsubject= 'Registration CONFIRMATION';
              $messageAdmin = 'Dear '.$ShopperName.'<br><br>'.'User Email: '.$Email.' <br> '.'User Password: '.$password.'<br><br><br><br><br><br><br>'.'We would like to congratulate you on becoming our mystery shopper now you can enjoy free meals on completion of each assignments or free vouchers on completion of surveys.'.'<br>'.'Just keep checking our website for new assignments.All the available assignments would be shown in your profile select any of them, perform the assignments, submit the assignment, once its approved you will be sent your money within a week of approval.'.'<br>'.'Do not forget to send us bank details or easy paisa account number in your profile'.'<br><br><br>'.'Happy Shopping'.'<br>'.'Team Mystery Shoppers Pakistan';
             //send email back to user 
             
@@ -904,10 +946,10 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
 
             $config = array();
             $config['protocol'] = 'mail';
-            $config['smtp_host'] = 'ssl://smtp.mysteryshopperspakistan.com';
+            $config['smtp_host'] = 'ssl://smtp.outlook.office365.com';
             $config['smtp_port'] = '465';
             $config['smtp_user'] = 'info@mysteryshopperspakistan.com';
-            $config['smtp_pass'] = 'omgomgsk';
+            $config['smtp_pass'] = 'OMG098)(*';
             $config['mailtype'] = 'html';
             $config['charset'] = 'utf-8';
             $config['wordwrap'] = TRUE;
@@ -942,35 +984,11 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
                 $image_path ='';
                 $video_path ='';
 
-     
-// if ( $this->upload->do_upload('pic')){
-//                           $profileImage = array('upload_data' => $this->upload->data()); 
-//                   //  $this->form_validation->set_error_delimiters('<p class="error">', '</p>');
-
-//                     //$error = array('error' => $this->upload->display_errors());
-
-//                     //print_r($error);
-//               }
-//                 //else{
-//                //     $profileImage = array('upload_data' => $this->upload->data());
-//                     //print_r($data['upload_data']['full_path']);
-//                // } 
-
-//                  $image_path = $profileImage['upload_data']['file_name'];
-
-//        if ( $this->upload->do_upload('profile_video')){
-//                        $profileVideo = array('upload_data' => $this->upload->data());  
-                  
-//                 }
-                
-//                   else{
-//                    //$profileVideo = array('upload_data' => $this->upload->data());
-//                       //print_r($data['upload_data']['full_path']);
-//                 }
-
-//                 $video_path = $profileVideo['upload_data']['file_name'];  
+               $checkUserEmail = $this->User_model->checkUserExist($this->input->post('mystery_shopper_email'))->user_email;
+               echo $checkUserEmail;
                
                
+              
           $userData = array(
           'user_name' => $this->input->post('mystery_shopper_name'),
           'user_password' => md5($this->input->post('userPassword')),
@@ -978,6 +996,7 @@ $message = 'Dear MYSTERYSHOPPER'.'<br><br><br>'.'Please Click On Following Link 
           'user_type' => 'MYSTERYSHOPPER',
           
         );
+        
 
         $usrId = $this->User_model->user_added_id();
       //$category = $this->input->post('category');
@@ -1043,9 +1062,57 @@ if(empty($image_path) && empty($video_path)) {
      //redirect(base_url().'index.php/Web/guidnessPage');
     if($buffer)
      {
+     $url = base_url().'index.php/Api/allClient';
+
+            //API key
+
+            $apiKey = 'CODEX@123';
+
+            //Auth credentials
+
+            $usernames = "admin";
+
+            $password = "1234";
+
+            //create a new cURL resource
+
+            $ch = curl_init($url);
+
+            curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+
+            curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-API-KEY: " . $apiKey));
+
+            curl_setopt($ch, CURLOPT_USERPWD, "$usernames:$password");
+
+            $result = curl_exec($ch);
+
+            $result = json_decode($result, true);
+
+         
+
+          //print_r($result);
+
+          //echo $result['data'];
+
+          
+
+          //close cURL resource
+
+          curl_close($ch);
+
+          $data['allclient'] = $result['data'];
+
      
-     echo '<script>alert("Same User Already Exist");  window.location.href = window.location.origin+"/index.php/MysteryShopperWeb/sign_up_view";  </script>';
-           return;
+    $this->session->set_flashdata('error','User already existed');	
+          
+           $this->load->view("Main/Header2");
+	   $this->load->view("Main/index", $data); 
+	   $this->load->view("Main/Footer2");
+               
      }
 
      

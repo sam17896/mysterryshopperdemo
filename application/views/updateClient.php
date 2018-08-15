@@ -33,6 +33,7 @@
               
               ?>
               <img id="blah" style="width:150px;height:200px;" src="<?php echo  $img; ?>">
+              
               </div>
           </div>
 
@@ -41,7 +42,13 @@
               
               <div class="col-md-6">
               <label>Picture</label>
-                <input class="form-control" value="<?php echo $selected_client->mysteryShopper_client_image?>" type="file" name="pic" onchange="readURL(this);" accept="image/*">
+                <input class="form-control" value="<?php echo $selected_client->mysteryShopper_client_image?>" id ="picture" type="file" name="pic" onchange="readURL(this);" accept="image/*">
+                 <p id="error1" style="display:none; color:#FF0000;">
+Invalid Image Format! Image Format Must Be JPG, JPEG, PNG or GIF.
+</p>
+<p id="error2" style="display:none; color:#FF0000;">
+Maximum File Size Limit is 1MB.
+</p>
               </div>
              </div>
           </div>
@@ -72,7 +79,7 @@
               </div>
               <div class="col-md-6">
               <label>Category</label>
-                <select class="form-control"  name="category">
+                <select class="form-control"  name="category" style="color:#16354e ;font-weight:bold;font-size:15px">
                   <option><?php echo $selected_client->mysteryShopper_client_category?></option>
                   <option>Food</option>
                   <option>Sports</option>
@@ -110,6 +117,35 @@ function readURL(input) {
             reader.readAsDataURL(input.files[0]);
         }
     }
+</script>
+<script>
+$('input[type="submit"]').prop("disabled", false);
+var a=0;
+//binds to onchange event of your input field
+$('#picture').bind('change', function() {
+if ($('input:submit').attr('disabled',false)){
+	$('input:submit').attr('disabled',true);
+	}
+var ext = $('#picture').val().split('.').pop().toLowerCase();
+if ($.inArray(ext, ['gif','png','jpg','jpeg']) == -1){
+	$('#error1').slideDown("slow");
+	$('#error2').slideUp("slow");
+	a=0;
+	}else{
+	var picsize = (this.files[0].size);
+	if (picsize > 1000000){
+	$('#error2').slideDown("slow");
+	a=0;
+	}else{
+	a=1;
+	$('#error2').slideUp("slow");
+	}
+	$('#error1').slideUp("slow");
+	if (a==1){
+		$('input:submit').attr('disabled',false);
+		}
+}
+});
 </script>
 
   

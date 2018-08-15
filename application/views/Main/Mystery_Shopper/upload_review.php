@@ -21,8 +21,9 @@
               
               <div class="col-md-12">
               <dt style="margin-top: 3%"><span style="color: red">* </span>Date</dt>
-                <input class="form-control" placeholder="" type="date"  name="reviewDate" value="<?php echo set_value('reviewData');?>" required>
+                <input class="form-control " placeholder="" id="datepicker" type="date"  name="reviewDate" value="<?php echo set_value('reviewData');?>" required>
                 
+
               </div>
               <div class="col-md-12" >
               <dt style="margin-top: 3%"><span style="color: red">* </span>Time</dt>
@@ -36,12 +37,12 @@
                   <div class="row" >
               <div class="col-md-12" >
               <dt style="margin-top: 3%"><span style="color: red">* </span>Number of Customers in store</dt>
-                <input class="form-control" type="text"  name="noCustomer" value="<?php echo set_value('noCustomer');?>" required>
+                <input class="form-control txtboxToFilter" type="text"  name="noCustomer" value="<?php echo set_value('noCustomer');?>" required>
               </div>
               <div class="col-md-12" >
               <dt style="margin-top: 3%"><span style="color: red">* </span>Number of Staff (visible) in store</dt>
 
-                <input class="form-control" type="text"  name="noStaff" value="<?php echo set_value('noStaff');?>" required>
+                <input class="form-control txtboxToFilter" type="text"  name="noStaff" value="<?php echo set_value('noStaff');?>" required>
               </div> 
               <div class="col-md-12" >
               <label>Server/Care Taker Name </label>
@@ -148,12 +149,12 @@ and feel of the place.</dt>
 
                     </dl>
                     <textarea onKeyDown="limitText(this.form.service,this.form.countdown,5000);"   
-onKeyUp="limitText(this.form.service,this.form.countdown,5000);" class="form-control"   name="service" rows="4"  autocomplete='street-address' required><?php echo set_value('service');?></textarea>
+onKeyUp="limitText(this.form.service,this.form.countdown,5000);" class="form-control"   name="service" rows="4" id="service" autocomplete='street-address' required><?php echo set_value('service');?></textarea>
 <div class="col-md-4">
 <font size="1">(Minimum characters: 200) characters Left</font>
 </div><br>
 <div class="col-md-1" style="margin-left: 20px;">
-<font size="1"><input readonly type="text" name="countdown" size="4" value="0"></font>
+<font size="1"><input readonly type="text" name="countdown" size="4" value="0" id="serviceCount"></font>
 </div>
                  <span class="text-danger"><?php echo form_error('service'); ?></span>
               </div>
@@ -175,12 +176,12 @@ appreciate. </dd></p>
 
                     </dl>
                     <textarea onKeyDown="limitText(this.form.food,this.form.countdownfood,5000);"   
-onKeyUp="limitText(this.form.food,this.form.countdownfood,5000);"  class="form-control"   name="food" rows="4"  autocomplete='street-address' required><?php echo set_value('food');?></textarea>
+onKeyUp="limitText(this.form.food,this.form.countdownfood,5000);"  class="form-control"   name="food" rows="4" id="food" autocomplete='street-address' required><?php echo set_value('food');?></textarea>
                 <div class="col-md-4">
 <font size="1">(Minimum characters: 200) characters Left</font>
 </div><br>
 <div class="col-md-1" style="margin-left: 20px;">
-<font size="1"><input readonly type="text" name="countdownfood" size="4" value="0"></font>
+<font size="1"><input readonly type="text" name="countdownfood" size="4" value="0" id="foodCount"></font>
 </div>
  <span class="text-danger"><?php echo form_error('food'); ?></span>
  
@@ -189,7 +190,7 @@ onKeyUp="limitText(this.form.food,this.form.countdownfood,5000);"  class="form-c
               <div class="col-md-4" style="margin-top: 1%;height:0% !important" >
                
                 <dt style="margin-top: 3%"><span style="color: red">* </span>Food Picture</dt>
-                   <input class="form-control" type="file"  name="image3"  required>    
+                   <input class="form-control" type="file" onchange="fileChanged(event)" onclick="fileClicked(event)"  name="image3" style="height:0% !important"  required>    
                  
                    </div>
               
@@ -220,8 +221,14 @@ apologetic? </dd></p>
                     
                     <p><dd>v. Was the complained item charged or new one. </dd></p>
                     <p><dd>vi. Any other comments you deem fit. </dd></p>
-                    <textarea   
- class="form-control" type="textarea" id="complain-text"  name="Complaints" rows="4"  autocomplete='street-address'><?php echo set_value('Complaints');?></textarea>
+                    <textarea onKeyDown="limitText(this.form.Complaints,this.form.countdownComplaints,5000);"   
+onKeyUp="limitText(this.form.Complaints,this.form.countdownComplaints,5000);"  
+ class="form-control" type="textarea" id="complain-text"  name="Complaints" rows="4"   autocomplete='street-address'><?php echo set_value('Complaints');?></textarea>
+ <!--<font size="1">(Minimum characters: 200) characters Left</font>
+ <br>
+<div class="col-md-1" style="margin-left: 20px;">
+<font size="1"><input readonly type="text" name="countdownComplaints" size="4" value="0" id="complaintsCount"></font>
+</div>-->
         
       </div>
     </div>
@@ -315,7 +322,7 @@ you parceled..</dd></p>
                 <div class="col-md-4" style="margin-top: 1%;height:0% !important" >
                
                     <dt style="margin-top: 3%">Take Away Picture</dt>
-                   <input class="form-control" type="file"  name="image2" >
+                   <input class="form-control" type="file" onchange="fileChanged(event)" onclick="fileClicked(event)" name="image2" style="height:0% !important">
                  
                    </div>
               </div>
@@ -365,7 +372,7 @@ you parceled..</dd></p>
                    <!--<div class="col-md-4" style="margin-top: 1%;height:0% !important" >
                
                     <span style="color: red">* </span><label>Self Picture</label>
-                   <input class="form-control" type="file"  name="image2"  required>
+                   <input class="form-control" type="file" onchange="fileChanged(event)" onclick="fileClicked(event)"  name="image2"  required>
                  
                    </div>-->
                    
@@ -379,7 +386,7 @@ you parceled..</dd></p>
 		<div class="col-md-4" style="margin-top: 1%;height:0% !important" >
                
                     <dt style="margin-top: 3%"><span style="color: red;inline:block;">* </span>Bill Picture</dt>
-                   <input class="form-control" type="file"  name="image1"  required>
+                   <input class="form-control" type="file" onchange="fileChanged(event)" onclick="fileClicked(event)"  name="image1"  required style="height:0% !important">
                  
                    </div>
                     </div>
@@ -387,7 +394,7 @@ you parceled..</dd></p>
     		<div class="col-md-4" style="margin-top: 1%;height:0% !important" >
                
                    <label>Extra</label>
-                   <input class="form-control" type="file"  name="image4"  >
+                   <input class="form-control" type="file" onchange="fileChanged(event)" onclick="fileClicked(event)"  name="image4"  style="height:0% !important">
                  
                    </div>
                    </div>
@@ -395,7 +402,7 @@ you parceled..</dd></p>
                    <div class="col-md-4" style="margin-top: 1%;height:0% !important" >
                
                     <label>Extra</label>
-                   <input class="form-control" type="file"  name="image5"  >
+                   <input class="form-control" type="file" onchange="fileChanged(event)" onclick="fileClicked(event)"  name="image5" style="height:0% !important" >
                  
                    </div>               
                    
@@ -408,7 +415,7 @@ you parceled..</dd></p>
 
                     <div class="col-md-12" style="margin-top: 5%">
                     
-                    <button id="register" class="btn btn-green btn-block"  name="Send" value="SUBMIT REVIEW">Submit</button>
+                    <button id="register" class="btn btn-green btn-block submitBtn"  name="Send"  value="SUBMIT REVIEW">Submit</button>
                     </div>
                     </form>
 
@@ -418,8 +425,19 @@ you parceled..</dd></p>
 </div>
 </div>
 
+ 
+ 
+
+
 <script src="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
+  
 <link href="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet"/>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+
   <script language="javascript" type="text/javascript">
   
   var timepicker = new TimePicker('time', {
@@ -442,11 +460,61 @@ function limitText(limitField, limitCount, limitNum) {
   }
 }  
 
+
+
+
+
 $(document).ready(function () {
+ 
+  
+  
+  
+  
+  
+  //console.log(complaintstxt);
+   $(".submitBtn").click(function() {
+  	 var ServiceTxtVal = $('#service').val();
+ 	 var serviceWords = ServiceTxtVal.length;
+ 	 var complaintstxt = $('#complain-text').val();
+ 	var complaintsWords = complaintstxt.length;
+  $('#complaintsCount').val(complaintsWords);
+  	$('#serviceCount').val(serviceWords);
+  
+  
+  
+	  var foodTxtVal = $('#food').val();
+	  var foodWords = foodTxtVal.length;
+	   $('#foodCount').val(foodWords);
+  
+
+	  if(Number(foodWords) < Number(200)){
+	  $('#myModal').modal('show');
+         	$('#messageBox').text("In Food character length is less than 200 ");
+	 
+	 
+	 	 return false
+	  
+	  }
+	  
+	  if(Number(serviceWords) < Number(200)){
+	  $('#myModal').modal('show');
+         	$('#messageBox').text("In Service character length is less than 200 ");
+	 
+	       
+	 	return false
+	  
+	  }
+	  
+   });
+ 
+ 
+ 
+
 $( "#yes" ).click(function() {
    
    $('#collapse1').css('display','block');
    $("#complain-text").prop('required',true);
+   
      
 });
 

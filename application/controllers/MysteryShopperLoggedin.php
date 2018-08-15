@@ -8,12 +8,12 @@
 			parent::__construct();
       $this->load->model('Client_model');
       $this->load->model('Assignment_model');
-      $this->load->model('Wallet');
       $this->load->model('MysteryShopper_model');
-
+      $this->load->model('Wallet');
 
 
 		}
+
 
     public function my_wallet(){
       if($this->session->userdata('username')  && $this->session->userdata('type') == 'MYSTERYSHOPPER')
@@ -59,7 +59,6 @@
       $this->load->view("login");
      }
   }
-
 
     	public function index() {
 
@@ -173,7 +172,7 @@
          {
           echo $e;
          }
-         if($this->session->userdata('username'))
+         if($this->session->userdata('username') && $this->session->userdata('type') == 'MYSTERYSHOPPER')
      {
 
          foreach($expireAssignmentCheck as $key => $value){
@@ -258,13 +257,13 @@
 
          else
          {
-          redirect(base_url().'index.php/Web/login');
+          redirect('https://www.mysteryshopperspakistan.com/index.php/Main/logout');
          }
 
      	}
      	public function ReviewUploadGreeting()
         {
-        $data['users']= $this->session->userdata('username');
+          $data['users']= $this->session->userdata('username');
           $this->load->view("Main/Mystery_Shopper/Header",$data);
           $this->load->view("Main/ReviewUploadGreetingPage");
           $this->load->view("Main/Mystery_Shopper/Footer");
@@ -319,10 +318,17 @@
           echo $e;
          }
 
-
+   if($this->session->userdata('username') && $this->session->userdata('type') == 'MYSTERYSHOPPER')
+     {
          $this->load->view("Main/Mystery_Shopper/Header",$data);
          $this->load->view("Main/Mystery_Shopper/assignment_detail",$data);
          $this->load->view("Main/Mystery_Shopper/Footer");
+
+         }
+          else
+         {
+          redirect(base_url().'index.php/Web/login');
+         }
 
       }
        public function get_assignment()
@@ -484,6 +490,49 @@
           curl_close($ch);
 
           $data['allAssignment'] = $result['data'];
+          //print_r($data);
+
+
+         }
+         catch(Exception $e)
+         {
+          echo $e;
+         }
+
+         try{
+
+            $id = $this->session->userdata('id');
+
+          //API URL
+            $url = base_url().'index.php/Api/all_pending';
+
+            //API key
+            $apiKey = 'CODEX@123';
+
+            //Auth credentials
+            $usernames = "admin";
+            $password = "1234";
+
+
+            //create a new cURL resource
+            $ch = curl_init($url);
+
+            curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+            curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array("X-API-KEY: " . $apiKey));
+            curl_setopt($ch, CURLOPT_USERPWD, "$usernames:$password");
+
+            $result = curl_exec($ch);
+            $result = json_decode($result, true);
+
+          //print_r($result);
+          //echo $result['data'];
+
+          //close cURL resource
+          curl_close($ch);
+
+
           //print_r($data);
            $expireAssignmentCheck =  $result['data'];
 

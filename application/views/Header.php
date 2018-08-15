@@ -36,6 +36,10 @@
     position: absolute;
     z-index: 1;
 }
+select
+{
+	color: white !important;
+}
 
 .tooltip:hover .tooltiptext {
     visibility: visible;
@@ -57,6 +61,7 @@
                     </svg>
                 </div>
             </div>
+            
 
             <header class="header">
                 <div class="navigation-trigger hidden-xl-up" data-sa-action="aside-open" data-sa-target=".sidebar">
@@ -397,12 +402,12 @@
 
                         <li class="@@widgetactive"><a href="<?php echo site_url('Assignment')?>"><i class="zmdi zmdi-format-underlined"></i> Assignments</a></li>
 
-                        <li class="navigation__sub @@variantsactive">
-                            <a href=""><i class="zmdi zmdi-widgets"></i> Settings</a>
+                        <li class=" @@variantsactive">
+                            <a href="<?php echo site_url('main/changePassword')?>"><i class="zmdi zmdi-widgets"></i> Settings</a>
 
-                            <ul>
+                            <!--<ul>
                                 <li class="@@hiddensidebarboxedactive"><a href="<?php echo site_url('main/changePassword')?>">Change Password</a></li>
-                            </ul>
+                            </ul>-->
                         </li> 
                         
                         
@@ -493,6 +498,60 @@
                     </ul>
                 </div>
             </aside>
+             <!-- Modal -->
+   <div class="msgModal">
+  <div class="modal fade " id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+       <center> <div class="modal-body">
+          <p style="color:white">Session Expired, Login Again To Continue.</p>
+          
+        </div></center>
+        <center><div style="padding: 15px;
+   
+    border-top: 1px solid #e5e5e5;" >
+          <a class="btn btn-info btn-lg"  href="https://www.mysteryshopperspakistan.com/index.php/Main/logout">OK</a>
+          
+        </div></center>
+      </div>
+      
+    </div>
+  </div>
+  </div>
+  
+       <!-- Modal -->
+   <div class="msgModal">
+  <div class="modal fade " id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+       <center> <div class="modal-body">
+          <p style="color:white" id="msg" ></p>
+          
+        </div></center>
+        <center><div style="padding: 15px;
+   
+    border-top: 1px solid #e5e5e5;" >
+          <a class="btn btn-info btn-lg"  data-dismiss="modal">OK</a>
+          
+        </div></center>
+      </div>
+      
+    </div>
+  </div>
+  </div>
+      
 
             <div class="themes">
     <div class="scrollbar-inner">
@@ -509,6 +568,7 @@
     </div>
 </div>
 
+	
 	<script src="<?php echo base_url(); ?>vendors/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="<?php echo base_url(); ?>vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
         <script src="<?php echo base_url(); ?>vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -538,21 +598,28 @@
         <script src="<?php echo base_url(); ?>js/app.min.js"></script>
         
         <script>
-        
-      
+  
+   
 
         
         function session_expire_check()
 {
 	setTimeout(function(){ 
-        alert("Session Expired, Login Again To Continue.");
- 
+        //alert("Session Expired, Login Again To Continue.");
+        $.noConflict();
+ 	$('#myModal').modal('show');
         
-        window.location = "https://www.mysteryshopperspakistan.com/index.php/Main/logout";
+       //window.location = "https://www.mysteryshopperspakistan.com/index.php/Main/logout";
         
-        exit;
+        //exit;
          
          }, 1200000);
 }
+
+$('#myModal').on('hidden.bs.modal', function () {
+    
+    window.location = "https://www.mysteryshopperspakistan.com/index.php/Main/logout";
+})
+
      
         </script>

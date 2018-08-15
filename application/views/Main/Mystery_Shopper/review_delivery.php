@@ -56,12 +56,12 @@
 
                     </dl>
                     <textarea onKeyDown="limitText(this.form.call_center,this.form.countdown,5000);"   
-onKeyUp="limitText(this.form.call_center,this.form.countdown,5000);" class="form-control"   name="call_center" rows="4"  required><?php echo set_value('call_center');?></textarea>
+onKeyUp="limitText(this.form.call_center,this.form.countdown,5000);" class="form-control"   name="call_center" id="call_center" rows="4"  required><?php echo set_value('call_center');?></textarea>
 <div class="col-md-4">
 <font size="1">(Minimum characters: 200) characters Left</font>
 </div><br>
 <div class="col-md-1" style="margin-left: 20px;">
-<font size="1"><input readonly type="text" name="countdown" size="4" value="0"></font>
+<font size="1"><input readonly type="text" name="countdown" id="call_centerCount" size="4" value="0"></font>
 </div>
                  <span class="text-danger"><?php echo form_error('call_center'); ?></span>
               </div>
@@ -83,12 +83,12 @@ onKeyUp="limitText(this.form.call_center,this.form.countdown,5000);" class="form
 
                     </dl>
                     <textarea onKeyDown="limitText(this.form.online,this.form.countdownfood,5000);"   
-onKeyUp="limitText(this.form.online,this.form.countdownfood,5000);"  class="form-control"   name="online" rows="4"  required><?php echo set_value('online');?></textarea>
+onKeyUp="limitText(this.form.online,this.form.countdownfood,5000);"  class="form-control" id="online"  name="online" rows="4"  required><?php echo set_value('online');?></textarea>
                 <div class="col-md-4">
 <font size="1">(Minimum characters: 200) characters Left</font>
 </div><br>
 <div class="col-md-1" style="margin-left: 20px;">
-<font size="1"><input readonly type="text" name="countdownfood" size="4" value="0"></font>
+<font size="1"><input readonly type="text" name="countdownfood" id="onlineCount" size="4" value="0"></font>
 </div>
  <span class="text-danger"><?php echo form_error('online'); ?></span>
               </div>
@@ -111,12 +111,12 @@ onKeyUp="limitText(this.form.online,this.form.countdownfood,5000);"  class="form
 
                     </dl>
                     <textarea onKeyDown="limitText(this.form.rider,this.form.countdownComplaints,5000);"   
-onKeyUp="limitText(this.form.rider,this.form.countdownComplaints,5000);" class="form-control" type="textarea"  name="rider" rows="4"  required><?php echo set_value('rider');?></textarea>
+onKeyUp="limitText(this.form.rider,this.form.countdownComplaints,5000);" class="form-control" type="textarea" id="rider"  name="rider" rows="4"  required><?php echo set_value('rider');?></textarea>
                 <div class="col-md-4">
 <font size="1">(Minimum characters: 200) characters Left</font>
 </div><br>
 <div class="col-md-1" style="margin-left: 20px;">
-<font size="1"><input readonly type="text" name="countdownComplaints" size="4" value="0"></font>
+<font size="1"><input readonly type="text" name="countdownComplaints" id="riderCount" size="4" value="0"></font>
 </div>
  <span class="text-danger"><?php echo form_error('rider'); ?></span>
               </div>
@@ -201,7 +201,7 @@ please jolt down. </dd></p>
               <div class="col-md-4" style="margin-top: 1%;height:0% !important" >
                
                 <dt style="margin-top: 3%"><span style="color: red">* </span>Food Picture</dt>
-                   <input class="form-control" type="file"  name="image3"  required>    
+                   <input class="form-control" type="file"  onchange="fileChanged(event)" onclick="fileClicked(event)" name="image3"  required style="height:0% !important">    
                  
                    </div>
              
@@ -227,7 +227,7 @@ please jolt down. </dd></p>
               <div class="col-md-4" style="margin-top: 1%" >
                
                 <dt style="margin-top: 3%"><span style="color: red">* </span>Food itSelf Picture</dt>
-                   <input class="form-control" type="file"  name="image2"  required>    
+                   <input class="form-control" type="file" onchange="fileChanged(event)" onclick="fileClicked(event)"  name="image2"  required style="height:0% !important">    
                  
                    </div>
               </div>
@@ -248,7 +248,7 @@ please jolt down. </dd></p>
 		<div class="col-md-4" style="margin-top: 1%;height:0% !important" >
                
                     <dt style="margin-top: 3%"><span style="color: red;inline:block;">* </span>Bill Picture</dt>
-                   <input class="form-control" type="file"  name="image1"  required>
+                   <input class="form-control" type="file" onchange="fileChanged(event)" onclick="fileClicked(event)"  name="image1"  required style="height:0% !important">
                  
                    </div>
                     </div>
@@ -256,7 +256,7 @@ please jolt down. </dd></p>
     		<div class="col-md-4" style="margin-top: 1%;height:0% !important" >
                
                    <label>Extra</label>
-                   <input class="form-control" type="file"  name="image4"  >
+                   <input class="form-control" type="file"  onchange="fileChanged(event)" onclick="fileClicked(event)" name="image4" style="height:0% !important" >
                  
                    </div>
                    </div>
@@ -264,7 +264,7 @@ please jolt down. </dd></p>
                    <div class="col-md-4" style="margin-top: 1%;height:0% !important" >
                
                     <label>Extra</label>
-                   <input class="form-control" type="file"  name="image5"  >
+                   <input class="form-control" type="file" onchange="fileChanged(event)" onclick="fileClicked(event)"  name="image5"  style="height:0% !important">
                  
                    </div>               
                    
@@ -310,5 +310,69 @@ function limitText(limitField, limitCount, limitNum) {
     limitCount.value =  limitField.value.length;
   }
 }  
+
+$(document).ready(function () {
+ 	var call_centerCountTxtVal = $('#call_center').val();
+ 	 var call_centerCountWords = call_centerCountTxtVal.length;
+  	$('#call_centerCount').val(call_centerCountWords);
+  
+  
+  
+	  var onlineTxtVal = $('#online').val();
+	  var onlineWords = onlineTxtVal.length;
+	   $('#onlineCount').val(onlineWords);
+	   
+	  var riderTxtVal = $('#rider').val();
+	  var riderWords = riderTxtVal.length;
+	   $('#riderCount').val(riderWords);
+	   
+	   
+	   $(".submitBtn").click(function() {
+	   
+	   
+  	var call_centerCountTxtVal = $('#call_center').val();
+ 	 var call_centerCountWords = call_centerCountTxtVal.length;
+  	$('#call_centerCount').val(call_centerCountWords);
+  
+  
+  
+	  var onlineTxtVal = $('#online').val();
+	  var onlineWords = onlineTxtVal.length;
+	   $('#onlineCount').val(onlineWords);
+	   
+	  var riderTxtVal = $('#rider').val();
+	  var riderWords = riderTxtVal.length;
+	   $('#riderCount').val(riderWords);
+  
+
+	  if(Number(call_centerCountWords) < Number(200)){
+	  $('#myModal').modal('show');
+         	$('#messageBox').text("In Call Center length is less than 200 ");
+	 
+	 
+	 	 return false
+	  
+	  }
+	  
+	  if(Number(onlineWords) < Number(200)){
+	  $('#myModal').modal('show');
+         	$('#messageBox').text("In Online character length is less than 200 ");
+	  
+	       
+	 	return false
+	  
+	  }
+	  if(Number(riderWords) < Number(200)){
+	  $('#myModal').modal('show');
+         	$('#messageBox').text("In rider character length is less than 200 ");
+	  
+	       
+	 	return false
+	  
+	  }
+   });
+  
+
+});
 </script>
         

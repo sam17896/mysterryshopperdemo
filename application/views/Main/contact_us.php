@@ -260,6 +260,7 @@
                             <span style="color: white;font-size:15px">Name</span>
                             <input type="text" name="contactUs_name" placeholder="Name" required="" value="<?php echo set_value('contactUs_name');?>" style="margin-left: 3%;margin-top: 5%">
                            <span class="text-danger"><?php echo form_error('contactUs_name'); ?></span>
+                           <p style="padding-bottom: 3%;"></p>
                             
                             <span style="color: white;font-size:15px">Subject</span>
                             <input type="text" name="contactUs_subject" placeholder="Subject" required="" value="<?php echo set_value('contactUs_subject');?>"  style="margin-left: 3%;margin-top: 5%">
@@ -270,8 +271,7 @@
                             <span style="color: white;font-size:15px">Message</span>
                             
                             <!--<input type="text" name="contactUs_message" placeholder="Message" value="<?php echo set_value('contactUs_message');?>" required=""  style="margin-left: 3%;margin-top: 5%">-->
-                            <textarea rows="4" class="textarea" type="text" name="contactUs_message" placeholder="Message" value="<?php echo set_value('contactUs_message');?>" required=""  style="overflow:hidden;margin-left: 3%;margin-top: 5%">
-                            </textarea>
+                            <textarea rows="4" class="textarea" type="text" name="contactUs_message" placeholder="Message" value="<?php echo set_value('contactUs_message');?>" required=""  style="overflow:hidden;margin-left: 3%;margin-top: 5%"></textarea>
                              <span class="text-danger"><?php echo form_error('contactUs_message'); ?></span>
                             
                             <input class="submit" type="submit" value="Submit">

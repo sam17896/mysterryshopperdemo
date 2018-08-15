@@ -6,16 +6,15 @@
 
 <head>
     
-    <link rel="stylesheet" href="<?php echo base_url(); ?>Main/wp-content/cache/min/1/cad5bd538ffa16955b5c76abd8cc01c1.css" />
-    
+   
+    <link rel="stylesheet" href="<?php echo base_url(); ?>Main/wp-content/cache/min/1/cad5bd538ffa16955b5c76abd8cc01c1.css">
     
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" type="image/png" sizes="192x192" href="<?php echo base_url(); ?>Main/wp-content/uploads/2015/02/fvIcon.png">
     <link rel="stylesheet" href="<?php echo base_url(); ?>Main/wp-content/uploads/2015/02/mspStyle.css">
-    
-    
+  
    
     
    
@@ -86,6 +85,7 @@ border-radius: 10px;
     	<link rel="stylesheet" href="<?php echo base_url(); ?>/Main/css/ukms/layout2/stylesad2f.css?1.1.3">
 	<script type='text/javascript' src='<?php echo base_url(); ?>Main/wp-content/cache/busting/1/wp-includes/js/jquery/jquery-1.12.4.js'></script>
     	<script src="<?php echo base_url(); ?>Main/wp-content/cache/min/1/38e7ad9bd856d1729b0aed6fcd4a46b6.js" ></script>
+    	
 
 
 </head>
@@ -118,7 +118,8 @@ border-radius: 10px;
             
           <li ><a href="<?php echo site_url(); ?>/Web/food" >Food</a></li>
           <li><a href="<?php echo site_url(); ?>/Web/services">Services</a></li>
-          <li><a href="<?php echo site_url(); ?>/Web/faq">FAQ</a></li>
+          <li><a href="<?php echo site_url(); ?>/Web/faq">Shopper FAQ</a></li>
+           <li><a href="<?php echo site_url(); ?>/Web/client_faq">Client FAQ</a></li>
           <li><a href="<?php echo site_url(); ?>/Web/about_us">About Us</a></li>
           <li><a href="<?php echo site_url(); ?>/Web/contact_us">Contact Us</a></li>
         </ul>
@@ -148,6 +149,8 @@ jQuery(document).ready(function($) {
 
 $( "#menu" ).click(function() {
   document.getElementById('hideLogo').style.display='none';
+  
+   
 });
 
 
@@ -187,3 +190,65 @@ $( "#menu" ).click(function() {
 
 
 </html>
+<script>
+jQuery(document).ready(function($) {
+
+
+  
+   
+	
+	
+	var nameError = $('#space').val();
+	var remove_start_p_tag =  nameError.replace("<p>","");
+	var name_error = remove_start_p_tag.replace("</p>","");
+	
+	var contact = $('#contact').val();
+	var remove_start_p_tag_contact =  contact.replace("<p>","");
+	var contact_error = remove_start_p_tag_contact.replace("</p>","");
+	
+	var email = $('#email').val();
+	var remove_start_p_tag_email =  email.replace("<p>","");
+	var email_error = remove_start_p_tag_email.replace("</p>","");
+	
+	var password = $('#password').val();
+	var remove_start_p_tag_password =  password.replace("<p>","");
+	var password_error = remove_start_p_tag_password.replace("</p>","");
+	
+	var cat = $('#cat').val();
+	var remove_start_p_tag_cat =  cat.replace("<p>","");
+	var cat_error = remove_start_p_tag_cat.replace("</p>","");
+	
+	if(name_error !=""){
+         	$('#myModal').modal('show');
+         	$('#messageBox').text(name_error);
+         	return false;
+         	
+        }
+        else if(contact_error !=""){
+         	$('#myModal').modal('show');
+         	$('#messageBox').text(contact_error);
+         	return false;
+         	 
+        }
+         else if(email_error !=""){
+         	$('#myModal').modal('show');
+         	$('#messageBox').text("User already exist");
+         	return false;
+         	
+        }
+        else if(password_error !=""){
+         	$('#myModal').modal('show');
+         	$('#messageBox').text(password_error);
+         	return false;
+        }
+        else if(cat_error !=""){
+         	$('#myModal').modal('show');
+         	$('#messageBox').text(cat_error);
+         	return false;
+         	 
+        }
+       
+   
+ });
+ 
+ </script>

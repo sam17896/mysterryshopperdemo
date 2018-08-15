@@ -1,3 +1,5 @@
+   
+     
              <div class="main">
 
     <div class="full-width generic-section">
@@ -9,12 +11,16 @@
 
                     <form action="<?php echo site_url('MysteryShopperWeb/mysteryShopperProfileUpdate')?>"  method="POST" enctype="multipart/form-data" id="siteForm">
                                                 <input type="hidden" name="user_id" value="<?php echo $allMysteryShopper->mysteryShopper_id ?>" >
+                                                
+
+
+
 
               <div class="container">
                   <div class="form-group">
                   <div class="row" >
               <div class="col-md-12">
-               <img id="blah" style="width:150px; height: 200px;" src="<?php echo base_url("uploads/".$allMysteryShopper->mysteryShopper_profile_image)?>">
+               <img id="blah" style="width:150px; height: 200px;" src="<?php echo base_url("uploads/".$allMysteryShopper->mysteryShopper_profile_image)?>" >
             </div>
           </div>
         </div>
@@ -23,8 +29,15 @@
                   <div class="row" >
                     <div class="col-md-4" style="margin-top: 2%">
                         <p>Profile Image</p>
-                          <input class="form-control " style="height:0% !important" type="file" placeholder="Select Profile Image" onchange="readURL(this);"  name="pic" accept="image/*" >
-                          <input class="form-control" type="hidden"  name="profile_image" accept="image/*" value="<?php echo $allMysteryShopper->mysteryShopper_profile_image?>" >
+                          <input class="form-control " style="height:0% !important" id="picture" type="file" placeholder="Select Profile Image" onchange="readURL(this);fileChanged(event)" onclick="fileClicked(event)"  name="pic" accept="image/*" >
+                          
+                          <input class="form-control" type="hidden"  name="profile_image"   value="<?php echo $allMysteryShopper->mysteryShopper_profile_image?>" >
+                          <p id="error1" style="display:none; color:#FF0000;">
+Invalid Image Format! Image Format Must Be JPG, JPEG, PNG or GIF.
+</p>
+<p id="error2" style="display:none; color:#FF0000;">
+Maximum File Size Limit is 1MB.
+</p>
                   </div>
 
                     <div class="col-md-4" style="margin-top: 2%">
@@ -443,6 +456,33 @@ function readURL(input) {
         }
      
     });
-    
+
+$('input[type="submit"]').prop("disabled", false);
+var a=0;
+//binds to onchange event of your input field
+$('#picture').bind('change', function() {
+if ($('input:submit').attr('disabled',false)){
+	$('input:submit').attr('disabled',true);
+	}
+var ext = $('#picture').val().split('.').pop().toLowerCase();
+if ($.inArray(ext, ['gif','png','jpg','jpeg']) == -1){
+	$('#error1').slideDown("slow");
+	$('#error2').slideUp("slow");
+	a=0;
+	}else{
+	var picsize = (this.files[0].size);
+	if (picsize > 1000000){
+	$('#error2').slideDown("slow");
+	a=0;
+	}else{
+	a=1;
+	$('#error2').slideUp("slow");
+	}
+	$('#error1').slideUp("slow");
+	if (a==1){
+		$('input:submit').attr('disabled',false);
+		}
+}
+}); 
 </script>      
-        
+      
